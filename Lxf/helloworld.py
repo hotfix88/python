@@ -8,3 +8,6 @@ fyso@163.com
 
 print 'hello, world!'
 print 'Git-dev'
+x = 3
+print x
+

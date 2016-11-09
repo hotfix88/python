@@ -13,4 +13,4 @@ def test_x(x):
     return 100;
 print x
 
-y = 6
+y = 666

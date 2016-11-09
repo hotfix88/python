@@ -2,9 +2,9 @@
 #encoding:utf-8
 """
 Created on Mon Oct 31 21:09:06 2016
-@author: Administrator
-created by CMCC.fengyang
-fyso@163.com
+@author: deepblue
+@GitHub: hotfix88
+@Email : hotfix88@sina.com
 
 
 """

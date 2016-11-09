@@ -1,0 +1,6 @@
+Blog	china	US	vote
+sohu	1	2	4
+sina	2	0	5
+163	2	4	5
+178	0	4	7
+meituan	2	2	9

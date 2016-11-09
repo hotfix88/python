@@ -6,4 +6,4 @@ created by CMCC.fengyang
 fyso@163.com
 """
 
-print 'hello, world'
+print 'hello, world!'

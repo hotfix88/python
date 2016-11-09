@@ -1,6 +1,11 @@
-Blog	china	US	vote
-sohu	1	2	4
-sina	2	0	5
-163	2	4	5
-178	0	4	7
-meituan	2	2	9
+Blog	China	US	news	goods
+sohu	1	2	4	2
+sina	2	0	5	1
+163	2	4	5	0
+178	0	4	7	2
+meituan	2	2	9	4
+zhihu	2	6	9	1
+baidu	9	0	2	1
+taobao	10	5	2	18
+dangdang	2	3	0	11
+feiniu	2	1	2	8

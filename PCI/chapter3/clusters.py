@@ -211,7 +211,7 @@ def kcluster(rows,distance=pearson,k=4):
       
   return bestmatches
 
-def tanamoto(v1,v2):
+def tanimoto(v1,v2):
   c1,c2,shr=0,0,0
   
   for i in range(len(v1)):

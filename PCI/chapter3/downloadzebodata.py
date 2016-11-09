@@ -1,3 +1,6 @@
+
+#20161109, no use ,because  BeautifulSoup is unvaliable in 2.7.6
+
 from BeautifulSoup import BeautifulSoup
 import urllib2
 import re
@@ -25,6 +28,7 @@ for i in range(1,51):
         itemowners.setdefault(txt,{})
         itemowners[txt][currentuser]=1
       currentuser+=1
+
       
 out=file('zebo.txt','w')
 out.write('Item')

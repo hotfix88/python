@@ -7,4 +7,4 @@ fyso@163.com
 """
 
 print 'hello, world!'
-print 'Git-dev!'
+print 'Git-dev'

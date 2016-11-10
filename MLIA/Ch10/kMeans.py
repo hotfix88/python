@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 '''
 Created on Feb 16, 2011
 k Means Clustering for Ch10 of Machine Learning in Action
 @author: Peter Harrington
+
+modify on Sun Apr 26 14:08:09 2015
 '''
 from numpy import *
 

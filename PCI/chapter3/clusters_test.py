@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Nov 09 21:40:54 2016   @Administrator 
+Created on Wed Nov 09 21:40:54 2016   @Administrator
 
-@author: deepblue 
+@author: deepblue
 @GitHub: hotfix88
 @Email : hotfix88@sina.com
 """
@@ -41,8 +41,8 @@ sum1Sq =  sum(pow(v,2) for v in v1)
 sum2Sq =  sum(pow(v,2) for v in v2)
 print sum1Sq,sum2Sq
 
-pSum=sum([v1[i]*v2[i] for i in range(len(v1))])  
-print pSum  
+pSum=sum([v1[i]*v2[i] for i in range(len(v1))])
+print pSum
 
 num = pSum - (sum1*sum2/len(v1))
 den = sqrt((sum1Sq-pow(sum1,2)/len(v1))*(sum2Sq-pow(sum2,2)/len(v1)))
@@ -65,17 +65,17 @@ clusters.drawdendrogram(clust,blognames,jpeg='blogclust.jpg')
 rdata = clusters.rotatematrix(data)
 wordclust = clusters.hcluster(rdata)
 clusters.drawdendrogram(wordclust,labels=words,jpeg='wordclust.jpg')
-
+#
 
 #----------------K means----------------
 n = 4
 kclust = clusters.kcluster(data,k=n)
 for i in range(len(kclust)):
     print [blognames[r] for r in kclust[i]]
-    
-    
-#------------------Clustering Results--------------------    
-f1 = 'zebo.txt'    
+
+
+#------------------Clustering Results--------------------
+f1 = 'zebo.txt'
 wants,people,data = clusters.readfile(f1)
 clust = clusters.hcluster(data,distance=clusters.tanimoto)
 clusters.drawdendrogram(clust,wants,jpeg='clusts.jpg')

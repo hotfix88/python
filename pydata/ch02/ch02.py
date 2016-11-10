@@ -3,14 +3,15 @@
 Created on Tue Sep 22 21:37:03 2015
 
 @author: Administrator
-
 modify: 20150923 by fengyang
+
+modify: 20161110 
 """
 
 ######################一、usa gov数据################################
 #----------读入数据：使用基础库----------
-#path = 'D:/study/pydata/ch02/usagov_bitly_data2012-03-16-1331923249.txt'
-path = 'test.txt'
+path = 'D:\study\Data\pydata-book\ch02\usagov_bitly_data2012-03-16-1331923249.txt'
+#path = 'test2.txt'
 rl = open(path).readline()#读取一行,str,长度包含最后换行符
 rls = open(path).readlines()#读取全部行，list，包含元素个数
 ''' 测试代码

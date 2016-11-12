@@ -12,3 +12,9 @@ print isinstance(a,int),isinstance(b,int)
 
 a = 'foo'
 print type(a)
+
+
+
+num = 2.0
+den = 3.0
+print 1-num/den

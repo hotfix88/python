@@ -10,7 +10,7 @@ Created on Wed Nov 09 23:05:56 2016   @Administrator
 #this file is for output and input!
 
 
-#-------------------------------------
+#---------read a matrix file,split by  , blank etc..---------
 def readfile(filename,sp='\t'):
   lines=[line for line in file(filename)]
   

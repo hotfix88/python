@@ -31,7 +31,7 @@ def euclid(v1,v2):
 '''
 pearson distance
 @author: deepblue
-@create: 20161112
+@create: 2016.11.12
 '''
 from math import sqrt
 def pearson(v1,v2):
@@ -58,77 +58,68 @@ def pearson(v1,v2):
     distance = 1-pearson    
     
     return similar,distance
+
+'''
+tanimoto distance
+@author: deepblue
+@create: 2016.11.12
+'''    
+def tanimoto(v1,v2):
+  c1,c2,shr=0,0,0
+  
+  for i in range(len(v1)):
+    if v1[i]!=0: c1+=1 # in v1
+    if v2[i]!=0: c2+=1 # in v2
+    if v1[i]!=0 and v2[i]!=0: shr+=1 # in both
+  
+  return 1.0-(float(shr)/(c1+c2-shr))    
     
+'''
+Function: hierarchical cluster!
+Author  : deepblue
+Remark  :
+@create : 
+@modify :
+'''
+def hcluster(rows,distance=pearson):
+  distances={}
+  currentclustid=-1
 
+  # Clusters are initially just the rows
+  clust=[bicluster(rows[i],id=i) for i in range(len(rows))]
 
-##----------------PCI chapter3---------------- 
-#def pearson(v1,v2):
-#  # Simple sums
-#  sum1=sum(v1)
-#  sum2=sum(v2)
-#  
-#  # Sums of the squares
-#  sum1Sq=sum([pow(v,2) for v in v1])
-#  sum2Sq=sum([pow(v,2) for v in v2])	
-#  
-#  # Sum of the products
-#  pSum=sum([v1[i]*v2[i] for i in range(len(v1))])
-#  
-#  # Calculate r (Pearson score)
-#  num=pSum-(sum1*sum2/len(v1))
-#  den=sqrt((sum1Sq-pow(sum1,2)/len(v1))*(sum2Sq-pow(sum2,2)/len(v1)))
-#  if den==0: return 0
-#
-#  return 1.0-num/den
-#  
-##----------------PCI chapter2-  pearson---------------- 
-#def sim_pearson(prefs,p1,p2):
-#  # Get the list of mutually rated items
-#  si={}
-#  for item in prefs[p1]:
-#    if item in prefs[p2]: si[item]=1
-#
-#  # if they are no ratings in common, return 0
-#  if len(si)==0: return 0
-#
-#  # Sum calculations
-#  n=len(si)
-#
-#  # Sums of all the preferences
-#  sum1=sum([prefs[p1][it] for it in si])
-#  sum2=sum([prefs[p2][it] for it in si])
-#
-#  # Sums of the squares
-#  sum1Sq=sum([pow(prefs[p1][it],2) for it in si])
-#  sum2Sq=sum([pow(prefs[p2][it],2) for it in si])
-#
-#  # Sum of the products
-#  pSum=sum([prefs[p1][it]*prefs[p2][it] for it in si])
-#
-#  # Calculate r (Pearson score)
-#  num=pSum-(sum1*sum2/n)
-#  den=sqrt((sum1Sq-pow(sum1,2)/n)*(sum2Sq-pow(sum2,2)/n))
-#  if den==0: return 0
-#
-#  r=num/den
-#
-#  return r
-# 
-##----------------PCI chapter2---  Olcide--------------  
-#def sim_distance(prefs,person1,person2):
-#  # Get the list of shared_items
-#  si={}
-#  for item in prefs[person1]:
-#    if item in prefs[person2]: si[item]=1
-#
-#  # if they have no ratings in common, return 0
-#  if len(si)==0: return 0
-#
-#  # Add up the squares of all the differences
-#  sum_of_squares=sum([pow(prefs[person1][item]-prefs[person2][item],2)
-#                      for item in prefs[person1] if item in prefs[person2]])
-#
-#  return 1/(1+sqrt(sum_of_squares))#a bug! add sqrt!
-  
-  
+  while len(clust)>1:
+    lowestpair=(0,1)
+    closest=distance(clust[0].vec,clust[1].vec)
+
+    # loop through every pair looking for the smallest distance
+    for i in range(len(clust)):
+      for j in range(i+1,len(clust)):
+        # distances is the cache of distance calculations
+        if (clust[i].id,clust[j].id) not in distances: 
+          distances[(clust[i].id,clust[j].id)]=distance(clust[i].vec,clust[j].vec)
+
+        d=distances[(clust[i].id,clust[j].id)]
+
+        if d<closest:
+          closest=d
+          lowestpair=(i,j)
+
+    # calculate the average of the two clusters
+    mergevec=[
+    (clust[lowestpair[0]].vec[i]+clust[lowestpair[1]].vec[i])/2.0 
+    for i in range(len(clust[0].vec))]
+
+    # create the new cluster
+    newcluster=bicluster(mergevec,left=clust[lowestpair[0]],
+                         right=clust[lowestpair[1]],
+                         distance=closest,id=currentclustid)
+
+    # cluster ids that weren't in the original set are negative
+    currentclustid-=1
+    del clust[lowestpair[1]]
+    del clust[lowestpair[0]]
+    clust.append(newcluster)
+
+  return clust[0]
   

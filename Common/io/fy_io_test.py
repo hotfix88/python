@@ -23,3 +23,7 @@ rownames,colnames,data = fy_io.readfile(f1)
 print data[rownames.index('sohu')][colnames.index('US')]
 print data[rownames.index('baidu')][colnames.index('China')]
 
+
+#out file
+fy_io.extractfile('blogdata.txt',20,40)
+

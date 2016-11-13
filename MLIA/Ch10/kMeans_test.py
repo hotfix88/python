@@ -3,7 +3,10 @@
 Created on Sun Apr 26 14:13:15 2015
 
 @author: Administrator
+
+modify:2016.11.13
 """
+
 
 import kMeans
 from numpy import *

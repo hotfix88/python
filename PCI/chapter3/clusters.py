@@ -1,5 +1,6 @@
 from PIL import Image,ImageDraw
 
+#important
 def readfile(filename):
   lines=[line for line in file(filename)]
   
@@ -18,6 +19,7 @@ def readfile(filename):
 
 from math import sqrt
 
+#important
 def pearson(v1,v2):
   # Simple sums
   sum1=sum(v1)
@@ -37,6 +39,7 @@ def pearson(v1,v2):
 
   return 1.0-num/den
 
+#important
 class bicluster:
   def __init__(self,vec,left=None,right=None,distance=0.0,id=None):
     self.left=left
@@ -45,6 +48,7 @@ class bicluster:
     self.id=id
     self.distance=distance
 
+#important
 def hcluster(rows,distance=pearson):
   distances={}
   currentclustid=-1
@@ -162,6 +166,7 @@ def drawnode(draw,clust,x,y,scaling,labels):
     # If this is an endpoint, draw the item label
     draw.text((x+5,y-7),labels[clust.id],(0,0,0))
 
+#important
 def rotatematrix(data):
   newdata=[]
   for i in range(len(data[0])):
@@ -171,6 +176,7 @@ def rotatematrix(data):
 
 import random
 
+#important
 def kcluster(rows,distance=pearson,k=4):
   # Determine the minimum and maximum values for each point
   ranges=[(min([row[i] for row in rows]),max([row[i] for row in rows])) 
@@ -182,7 +188,7 @@ def kcluster(rows,distance=pearson,k=4):
   
   lastmatches=None
   for t in range(100):
-    print 'Iteration %d' % t
+    print 'Iteration %d' %t
     bestmatches=[[] for i in range(k)]
     
     # Find which centroid is the closest for each row
@@ -257,7 +263,7 @@ def scaledown(data,distance=pearson,rate=0.01):
 
         # Keep track of the total error
         totalerror+=abs(errorterm)
-    print totalerror
+    #print totalerror
 
     # If the answer got worse by moving the points, we are done
     if lasterror and lasterror<totalerror: break

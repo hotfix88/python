@@ -13,13 +13,13 @@ from numpy import *
 dataMat = mat(kMeans.loadDataSet('testSet.txt'))
 
 #--------------------------自我测试区
-print(type(dataMat))
-print(shape(dataMat))
+print type(dataMat) 
+print shape(dataMat) 
 zeros((5,2))
-min(dataMat[:,0])
-min(dataMat[:,1])
-max(dataMat[:,0])
-max(dataMat[:,1])
+print min(dataMat[:,0])
+print min(dataMat[:,1])
+print max(dataMat[:,0])
+print max(dataMat[:,1])
 
 kMeans.randCent(dataMat,2)
 kMeans.distEclud(dataMat[0],dataMat[1])

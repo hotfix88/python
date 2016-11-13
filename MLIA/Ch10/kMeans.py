@@ -15,6 +15,7 @@ def loadDataSet(fileName):      #general function to parse tab -delimited floats
         curLine = line.strip().split('\t')
         fltLine = map(float,curLine) #map all elements to float()
         dataMat.append(fltLine)
+
     return dataMat
 
 def distEclud(vecA, vecB):

@@ -33,23 +33,29 @@ Remark  :
 @create : 
 @modify :
 ''' 
-def extractfile(infilename,col=1,row=1,sp='\t'): 
+# fy_io.extractfile('blogdata.txt','blogdata_part',0,31,0,41)
+
+def extractfile(infilename,outfilename='test.txt',cb=0,col=1,rb=0,row=1,sp='\t'): 
     lines=[line for line in file(infilename) if len(line) > row] 
+    if cb>col or rb >row:
+        return 'failcode = 1'
+    if col < 1 or row < 1:
+        return 'failcode = 2'
     outfile=[]       
     
-    for line in lines[0:row]:   
+    for line in lines[rb:row]:   
         orig = line.strip().split(sp)
         outline  = []
-        for x in orig[0:col]:
+        for x in orig[cb:col]:
             outline.append(x)
             outline.append(sp)
         outline.pop()
         outfile.append(outline) 
         
-    f = file('test.txt','w+')  
-    for line in lines[0:row]:
+    f = file(outfilename,'w+')  
+    for line in lines[rb:row]:
         orig = line.strip().split(sp)
-        for  x in orig[0:col-1]:
+        for  x in orig[cb:col-1]:
             f.write(x)
             f.write(sp)            
         f.write(orig[col-1])
@@ -57,7 +63,7 @@ def extractfile(infilename,col=1,row=1,sp='\t'):
     f.close()  
     
     
-    return 1
+    return 'success'
 
    
                    
@@ -69,7 +75,7 @@ def temp():
     f.write(k)
     f.close()
   
-
+print 'reload fy_io'
   
   
 #------------1.input a tsv file-------------

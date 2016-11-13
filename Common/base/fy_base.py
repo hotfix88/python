@@ -18,3 +18,10 @@ print type(a)
 num = 2.0
 den = 3.0
 print 1-num/den
+
+
+v = [1,2,3,4]
+map(float,v)
+
+
+

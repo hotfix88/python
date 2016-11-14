@@ -12,7 +12,7 @@ def loadDataSet(fileName, delim='\t'):
     return mat(datArr)
 
 def pca(dataMat, topNfeat=9999999):
-    meanVals = mean(dataMat, axis=0)
+    meanVals = mean(dataMat, axis=0) #mean by column
     meanRemoved = dataMat - meanVals #remove mean
     covMat = cov(meanRemoved, rowvar=0)
     eigVals,eigVects = linalg.eig(mat(covMat))
@@ -23,8 +23,8 @@ def pca(dataMat, topNfeat=9999999):
     reconMat = (lowDDataMat * redEigVects.T) + meanVals
     return lowDDataMat, reconMat
 
-def replaceNanWithMean(): 
-    datMat = loadDataSet('secom.data', ' ')
+def replaceNanWithMean(filename): 
+    datMat = loadDataSet(filename, ' ')
     numFeat = shape(datMat)[1]
     for i in range(numFeat):
         meanVal = mean(datMat[nonzero(~isnan(datMat[:,i].A))[0],i]) #values that are not NaN (a number)

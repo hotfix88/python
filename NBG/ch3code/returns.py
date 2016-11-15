@@ -15,3 +15,11 @@ annual_volatility = annual_volatility / np.sqrt(1./252.)
 print "Annual volatility", annual_volatility
 
 print "Monthly volatility", annual_volatility * np.sqrt(1./12.)
+
+
+
+annual_volatility = np.std(logreturns)/np.mean(logreturns)
+annual_volatility = annual_volatility / np.sqrt(1./252.)
+print "Annual volatility", annual_volatility
+
+print "Monthly volatility", annual_volatility * np.sqrt(1./12.)

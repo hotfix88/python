@@ -31,8 +31,7 @@ b = eye(3,dtype='int32')
 np.savetxt('eye3.txt',b)
 
 
-#读取文件
-c,v=np.loadtxt('data.csv', delimiter=',', usecols=(6,7), unpack=True)
+
 
 
 
@@ -40,7 +39,103 @@ c,v=np.loadtxt('data.csv', delimiter=',', usecols=(6,7), unpack=True)
 b_type = [('c',str,100),('v',int32,4)]
 c,v=np.loadtxt('blogdata.txt', dtype = b_type,delimiter='\t', usecols=(0,1), unpack=True,skiprows=1)
 
+#Because You're Ugly
+#c,v=np.loadtxt('blogdata.txt',delimiter='\t', usecols=(0,1), unpack=True,skiprows=1)
 
-c,v=np.loadtxt('blogdata.txt',delimiter='\t', usecols=(0,1), unpack=True,skiprows=1)
+print '\n-------------1-------------\n'
+#读取文件
+#AAPL	28-01-2011	 	344.17	344.4	333.53	336.1	21144800
+#股票名称 日期  空格  开盘  最高 最低 收盘 成交量
+c,v=np.loadtxt('data.csv', delimiter=',', usecols=(6,7), unpack=True)
+print np.mean(c)
+print np.average(c)
+print np.mean(v)
+
+print '\n------------2--------------\n'
+#加权平均
+print np.average(c, weights=v)
+#时间加权平均
+t = np.arange(len(c))
+print np.average(c, weights=t)
+
+print '\n------------3--------------\n'
+h,l=np.loadtxt('data.csv', delimiter=',', usecols=(4,5), unpack=True)
+print np.max(h)
+print np.min(h)
+#中间值
+print np.median(h)
+#极差
+print np.ptp(h)
+#均值
+print np.mean(h)
+#方差
+print np.var(h)
+#排序
+print np.msort(h)
+
+print '\n--------------4------------\n'
+c = np.loadtxt('data.csv', delimiter=',', usecols=(6,), unpack=True)  
+print "median =", np.median(c)  
+sorted = np.msort(c)  
+print "sorted =", sorted 
+ 
+N = len(c) 
+print "middle =", sorted[(N - 1)/2] 
+print "average middle =", (sorted[N /2] + sorted[(N - 1) / 2]) / 2  
+ 
+print "variance =", np.var(c) 
+print "variance from definition =", np.mean((c - c.mean())**2) 
 
 
+print '\n--------------3.12------------\n'
+arr = np.loadtxt('data.csv', delimiter=',', usecols=(6,), unpack=True)  
+returns = np.diff( arr ) / arr[ : -1]
+print "Standard deviation =", np.std(returns) 
+
+
+logreturns = np.diff( np.log(c) ) 
+print "log deviation =", np.std(logreturns) 
+
+posretindices = np.where(returns > 0) 
+print "Indices with positive returns", posretindices 
+
+#波动率（volatility）是对价格变动的一种度量。
+annual_volatility = np.std(logreturns)/np.mean(logreturns)  
+annual_volatility_year = annual_volatility / np.sqrt(1./252.)  
+print "Yearly volatility",annual_volatility_year 
+
+annual_volatility_month = annual_volatility * np.sqrt(1./30.) 
+print "Monthly volatility", annual_volatility_month
+
+
+
+print '\n--------------3.14------------\n'
+from datetime import datetime
+def datestr2num(s): 
+    return datetime.strptime(s, "%d-%m-%Y").date().weekday() 
+    
+#dates, close=np.loadtxt('data.csv', delimiter=',', usecols=(1,6), unpack=True) 
+dates, close=np.loadtxt('data.csv', delimiter=',', usecols=(1,6), converters={1:datestr2num}, unpack=True)  
+print "Dates =", dates  
+
+averages = np.zeros(5)    
+
+for i in range(5): 
+    indices = np.where(dates == i)  
+    prices = np.take(close, indices)  
+    avg = np.mean(prices) 
+    print "Day", i, "prices", prices, "Average", avg  
+    averages[i] = avg 
+    
+top = np.max(averages)  
+print "Highest average", top 
+print "Top day of the week", np.argmax(averages)  
+bottom = np.min(averages)  
+print "Lowest average", bottom 
+print "Bottom day of the week", np.argmin(averages)     
+
+
+
+zeros(4)
+ones(4)
+eye(4)

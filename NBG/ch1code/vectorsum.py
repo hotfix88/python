@@ -34,6 +34,21 @@ import numpy as np
 #多次循环，并未使内存占用有所增加，对于200w的计算量，1次和30次都只占用500MB内存
 #关于上限，64位  pow(2,64)=18.4*pow(10,18),pow(2000000,3)=8*pow(10,18),NUMPy溢出了。
 
+
+
+#Intel(R) Pentium(R) T2410 @2.00Ghz  /3GB /32bit
+#!python vectorsum.py 100000
+#python VS numpy : 0:00:00.421000 VS 0:00:00.016000
+#!python vectorsum.py 1000000
+#python VS numpy : 0:00:05.297000 VS 0:00:00.250000
+#!python vectorsum.py 2000000
+#python VS numpy : 0:00:10.641000 VS 0:00:00.515000
+#!python vectorsum.py 2000000   loop 10 times!
+#python VS numpy : 0:01:46.328000 VS 0:00:03.985000
+#!python vectorsum.py 2000000   loop 30 times!
+#python VS numpy : 0:05:32.906000 VS 0:00:11.313000
+
+
 #%run vectorsum.py 220000 和 !python vectorsum.py 220000 在ipython中效果完全一样
 
 
@@ -57,7 +72,7 @@ def pythonsum(n):
 
    return c
 
-N = 1   
+N = 30   
 
 size = int(sys.argv[1])
 

@@ -120,7 +120,7 @@ def datestr2num3(s):
 def datestr2num4(s): 
     return datetime.strptime(s, "%Y/%m/%d").date().weekday() 
 def datestr2num5(s): 
-    return datetime.strptime(s, "%Y/%m/%d").date().weekday() 
+    return datetime.strptime(s, "%Y-%m-%d").date().weekday() 
     
 #其它日期格式测试    
 dates2, close2=np.loadtxt('data2.csv', delimiter=',', usecols=(1,6), converters={1:datestr2num2}, unpack=True)  
@@ -131,8 +131,8 @@ print "Dates3 =", dates3
 #注意，如果用NPP打开后是2016/11/1，那么打开也是没问题的。
 dates4, close4=np.loadtxt('data4.csv', delimiter=',', usecols=(1,6), converters={1:datestr2num4}, unpack=True)  
 print "Dates4 =", dates4
-dates5, close5=np.loadtxt('2.csv', delimiter=',', usecols=(1,2), converters={1:datestr2num5}, unpack=True)  
-print "Dates5 =", dates5
+#dates5, close5=np.loadtxt('2.csv', delimiter=',', usecols=(1,2), converters={1:datestr2num5}, unpack=True)  
+#print "Dates5 =", dates5
 
 
    

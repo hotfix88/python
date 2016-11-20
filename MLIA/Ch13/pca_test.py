@@ -64,7 +64,8 @@ eigVals,eigVects = linalg.eig(mat(covMat))
 
 print [eigVals[0:i].sum()/eigVals.sum()  for i in range(16)]
 
-
+for i in range(16):
+    print float,eigVals[0:i].sum()/eigVals.sum()*100,'%\n'
 
 
 

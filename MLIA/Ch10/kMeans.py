@@ -5,6 +5,7 @@ k Means Clustering for Ch10 of Machine Learning in Action
 @author: Peter Harrington
 
 modify on Sun Apr 26 14:08:09 2015
+modify on 20161206!
 '''
 from numpy import *
 

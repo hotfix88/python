@@ -46,10 +46,10 @@ print 'i - i : \n',i - i
 print 'i.T * i :\n',i.T * i
 print 'i/ i :\n',i/ i
 #其它维度计算
-print power(i*2,2)
-print sum(i)
+print 'power(i*2,3)\n',power(i*2,3)
+print 'sum(i)\n',sum(i)
 #---欧几里得距离
-print sqrt(sum(power(i - z, 2))) 
+print 'oculed distance\n',sqrt(sum(power(i - z, 2))) 
 
 print i.shape
 
@@ -60,8 +60,16 @@ print '------------2-------------'
 c = range(24)
 c = mat(c)
 c = c.reshape(3,8)
-print c
-print min(c[0])
+print 'c\n',c
+print 'c[0]\n',c[0]
+print 'c[:,1]\n',c[:,1] #取某列
+print 'c[1,:]\n',c[0,:] #取某行，同c[0]
+print 'c[1,0]\n',c[1,0] #--取某一个元素
+
+print 'c[:,0].A==0\n',c[:,0].A==0
+print 'c[nonzero(c[:,0].A==0)[0]]\n',c[nonzero(c[:,0].A==0)[0]]
+
+
 print min(c[:,0])
 print min(c[:,1])
 print max(c[:,0])

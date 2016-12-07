@@ -51,8 +51,19 @@ plt.show()
 
 
 
-
-
+#----------------------------------
+dataMat = mat(kMeans.loadDataSet('testSet.txt'))
+#箱子图
+plt.boxplot((dataMat[:,0],dataMat[:,1]),whis=10)
+plt.show()
+plt.boxplot((dataMat[0],dataMat[1],dataMat[2],dataMat[3]),whis=10)
+plt.show()
+#线图
+plot(dataMat)
+plt.show()
+#散点图
+plt.scatter(list(dataMat[:,0]),list(dataMat[:,1]),c='blue',s=25,alpha=0.4,marker='o')
+plt.show()
 
 
 

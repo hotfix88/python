@@ -23,13 +23,15 @@ n=1000
 x=np.random.randn(1,n)
 y=np.random.randn(1,n)
 T=np.arctan2(x,y)
-plt.scatter(x,y,c=T,s=25,alpha=0.4,marker='o') # s  *  o   +
+plt.scatter(x,y,c=T,s=25,alpha=0.4,marker='o') # s  *  o   + ^
 #T:散点的颜色
 #s：散点的大小
 #alpha:是透明程度
 plt.show()
 
-#my test
+#多彩输出
+mkr=['o','s','^','D','>','*','<']
+clr = ['red','blue','cyan','yellow','green','m','b']
 
 l = [[1,2],[2,2],[1,1],[2,3]]
 m = mat(l)

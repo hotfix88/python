@@ -22,9 +22,10 @@ def loadDataSet(fileName):      #general function to parse tab -delimited floats
 def distEclud(vecA, vecB):
     return sqrt(sum(power(vecA - vecB, 2))) #la.norm(vecA-vecB)
 
+#---注意行是元素，列是属性
 def randCent(dataSet, k):
     n = shape(dataSet)[1]
-    centroids = mat(zeros((k,n)))#create centroid mat
+    centroids = mat(zeros((k,n)))#create centroid mat, k*n
     for j in range(n):#create random cluster centers, within bounds of each dimension
         minJ = min(dataSet[:,j]) 
         rangeJ = float(max(dataSet[:,j]) - minJ)
@@ -33,6 +34,7 @@ def randCent(dataSet, k):
     
 def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
     m = shape(dataSet)[0]
+    #--保存归属群和测量值
     clusterAssment = mat(zeros((m,2)))#create mat to assign data points 
                                       #to a centroid, also holds SE of each point
     centroids = createCent(dataSet, k)
@@ -42,16 +44,18 @@ def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
     while clusterChanged:
         c = c+1
         clusterChanged = False
+        #--开始对全部元素进行循环比对
         for i in range(m):#for each data point assign it to the closest centroid
-            minDist = inf; minIndex = -1
-            for j in range(k):
-                distJI = distMeas(centroids[j,:],dataSet[i,:])
+            minDist = inf; #最小距离
+            minIndex = -1 #索引
+            for j in range(k): #比较K个质心点
+                distJI = distMeas(centroids[j],dataSet[i])#距离比较核心代码
                 if distJI < minDist:
                     minDist = distJI; minIndex = j
             if clusterAssment[i,0] != minIndex: clusterChanged = True
-            clusterAssment[i,:] = minIndex,minDist**2
-        print 'get centriod loop:',c,'\n'#centroids
-        for cent in range(k):#recalculate centroids
+            clusterAssment[i] = minIndex,minDist**2 #--保存索引和SE距离
+        print ' ',c# get centriod loop: centroids
+        for cent in range(k):#recalculate centroids --重新计算质心
             ptsInClust = dataSet[nonzero(clusterAssment[:,0].A==cent)[0]]#get all the point in this cluster
             centroids[cent,:] = mean(ptsInClust, axis=0) #assign centroid to mean 
     return centroids, clusterAssment

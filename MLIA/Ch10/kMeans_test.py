@@ -8,50 +8,44 @@ modify:2016.11.13
 modify on 20161206!
 """
 
+from matplotlib import pyplot as plt
+import numpy as np
 
 import kMeans
 from numpy import *
 
 
 #--------------------------自我测试区
-print('--------------0------------------')
-m = kMeans.loadDataSet('test1.txt')
-m2 = mat(m)
-print m
-print m2,'\n',m2.shape,'\n'
-z = zeros((3,2))
-i2 = z + 1
-print z
-z2 = mat(z)#change array to matrix
-print i2
-
-#---矩阵加减乘除
-print m2 + i2
-print m2 * 2 
-print m2 * i2.T
-print kMeans.distEclud(m2,i2)
-
-
-
-print('--------------1------------------')
+print('--------------0 load data and print plot------------------')
 dataMat = mat(kMeans.loadDataSet('testSet.txt'))
-print type(dataMat) 
-print shape(dataMat) 
-zeros((5,2))
-print min(dataMat[:,0])
-print min(dataMat[:,1])
-print max(dataMat[:,0])
-print max(dataMat[:,1])
+i = mat(zeros((80,2))) + 1
+#箱子图
+plt.boxplot((dataMat[:,0],dataMat[:,1]),whis=10)
+plt.show()
+plt.boxplot((dataMat[0],dataMat[1],dataMat[2],dataMat[3]),whis=10)
+plt.show()
+#线图
+plot(dataMat)
+plt.show()
+#散点图
+plt.scatter(list(dataMat[:,0]),list(dataMat[:,1]),c='red',s=25,alpha=0.4,marker='o')
+plt.show()
 
-kMeans.randCent(dataMat,2)
-kMeans.distEclud(dataMat[0],dataMat[1])
 
-print('--------------2------------------')
+
+print('--------------1 kMeans ------------------')
 myCentroids,clustAssing = kMeans.kMeans(dataMat,4)
+plt.scatter(list(dataMat[:,0]),list(dataMat[:,1]),c='blue',s=25,alpha=0.4,marker='o')
+plt.scatter(list(myCentroids[:,0]),list(myCentroids[:,1]),c='red',s=45,alpha=0.4,marker='*')
+plt.show()
 
-print('--------------3------------------')
+#plt.scatter(clustAssing[:,0],clustAssing[:,1],c='red',s=25,alpha=0.4,marker='o')
+#plt.show()
+
+print('--------------2 biKmeans------------------')
 dataMat3 = mat(kMeans.loadDataSet('testSet2.txt'))
 centList,myNewAssments = kMeans.biKmeans(dataMat3,3)
+
 
 
 

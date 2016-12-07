@@ -37,7 +37,10 @@ def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
                                       #to a centroid, also holds SE of each point
     centroids = createCent(dataSet, k)
     clusterChanged = True
+    
+    c = 0
     while clusterChanged:
+        c = c+1
         clusterChanged = False
         for i in range(m):#for each data point assign it to the closest centroid
             minDist = inf; minIndex = -1
@@ -47,7 +50,7 @@ def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
                     minDist = distJI; minIndex = j
             if clusterAssment[i,0] != minIndex: clusterChanged = True
             clusterAssment[i,:] = minIndex,minDist**2
-        print 'centriod:::\n',centroids
+        print 'get centriod loop:',c,'\n'#centroids
         for cent in range(k):#recalculate centroids
             ptsInClust = dataSet[nonzero(clusterAssment[:,0].A==cent)[0]]#get all the point in this cluster
             centroids[cent,:] = mean(ptsInClust, axis=0) #assign centroid to mean 

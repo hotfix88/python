@@ -54,10 +54,11 @@ def kMeans(dataSet, k, distMeas=distEclud, createCent=randCent):
                     minDist = distJI; minIndex = j
             if clusterAssment[i,0] != minIndex: clusterChanged = True
             clusterAssment[i] = minIndex,minDist**2 #--保存索引和SE距离
-        print ' ',c# get centriod loop: centroids
+#        print ' ',c# get centriod loop: centroids
         for cent in range(k):#recalculate centroids --重新计算质心
             ptsInClust = dataSet[nonzero(clusterAssment[:,0].A==cent)[0]]#get all the point in this cluster
             centroids[cent,:] = mean(ptsInClust, axis=0) #assign centroid to mean 
+    print 'get centriod loop:',c,'times'
     return centroids, clusterAssment
 
 def biKmeans(dataSet, k, distMeas=distEclud):

@@ -87,9 +87,9 @@ df.to_csv('pdout.csv')
 
 #df3 = pd.read_csv('E:\\data\\0charge\\nj_busi.csv')
 #很迅速的载入了1200万行数据！！
-#df4 = pd.read_csv('E:\\data\\0charge\\nj_user.csv')
+df4 = pd.read_csv('E:\\data\\0charge\\nj_user.csv')
 ##C:\WinPython2.7\python-2.7.6.amd64\lib\site-packages\pandas\io\parsers.py:1070: DtypeWarning: Columns (8,9,17) have mixed types. Specify dtype option on import or set low_memory=False.
 #  data = self._reader.read(nrows),,400万行用户数据
-#df4[-1:]
+df4[-1:]
 #
 #df3[1:3]

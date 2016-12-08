@@ -15,6 +15,8 @@ Remark  :
 @modify :
 '''
 
+import numpy as np
+
 def loadDataSet(fileName):      #general function to parse tab -delimited floats
     dataMat = []                #assume last column is target value
     fr = open(fileName)
@@ -34,21 +36,21 @@ b = zeros((3,6))
 z = mat(b)#change array to matrix,array not support .T*
 i = z + 1
 
-#---矩阵和常量加减乘除
+#---矩阵和常量加减乘除,array计算是同样的结果！
 print 'i   : \n',i
 print 'i * 2 : \n',i * 2 
 print 'i + 2 : \n',i + 2 
 print 'i - 2 : \n',i - 2 
 print 'i / 2 : \n',i / 2 
-#---矩阵矩阵加减乘除
+#---矩阵矩阵加减乘除,array 可以和matrix相乘和转置！但是b.T* i 是不支持的！
 print 'i + i : \n',i + i
 print 'i - i : \n',i - i
 print 'i.T * i :\n',i.T * i
 print 'i/ i :\n',i/ i
-#其它维度计算
+#其它维度计算,array同样支持
 print 'power(i*2,3)\n',power(i*2,3)
 print 'sum(i)\n',sum(i)
-#---欧几里得距离
+#---欧几里得距离,array同样支持
 print 'oculed distance\n',sqrt(sum(power(i - z, 2))) 
 
 print i.shape
@@ -57,9 +59,11 @@ print i.shape
 
 #
 print '------------2-------------'
-c = range(24)
-c = mat(c)
-c = c.reshape(3,8)
+#---二维array和mat基本类似！
+d = range(24)
+d = np.array(d)
+d = d.reshape(3,8)
+c = mat(d)
 print 'c\n',c
 print 'c[0]\n',c[0]
 print 'c[:,1]\n',c[:,1] #取某列

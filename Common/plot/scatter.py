@@ -31,7 +31,7 @@ plt.show()
 
 #多彩输出
 mkr=['o','s','^','D','>','*','<']
-clr = ['red','blue','cyan','yellow','green','m','b']
+clr = ['red','blue','green','yellow','cyan','m','b']
 
 l = [[1,2],[2,2],[1,1],[2,3]]
 m = mat(l)

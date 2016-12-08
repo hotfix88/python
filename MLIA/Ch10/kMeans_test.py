@@ -32,7 +32,7 @@ plt.show()
 
 #--多彩输出！
 mkr=['o','s','^','D','>','*','<']
-clr = ['red','blue','cyan','yellow','green','m','b']
+clr = ['red','blue','green','yellow','cyan','m','b']
 for i in range(K):    
     plt.scatter(list(dataMat[nonzero(clustAssing[:,0].A==i)[0]][:,0]),
             list(dataMat[nonzero(clustAssing[:,0].A==i)[0]][:,1]),

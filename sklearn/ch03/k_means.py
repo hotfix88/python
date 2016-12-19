@@ -24,6 +24,11 @@ import matplotlib.pyplot as plt      #python画图包
 
 from sklearn.cluster import KMeans       #导入K-means算法包
 from sklearn.datasets import make_blobs
+from sklearn.datasets import load_iris
+#from sklearn  import datasets
+
+
+#iris = datasets.load_iris()
 
 plt.figure(figsize=(12, 12))
 
@@ -83,7 +88,7 @@ plt.title("Anisotropicly Distributed Blobs")
 # Different variance
 X_varied, y_varied = make_blobs(n_samples=n_samples,
 #                                cluster_std=[1.0, 2.5],
-cluster_std=2.0,
+cluster_std=[2.0,3.5],
                                 random_state=random_state)
 y_pred = KMeans(n_clusters=N, random_state=random_state).fit_predict(X_varied)
 #
@@ -103,3 +108,18 @@ plt.scatter(X_filtered[:, 0], X_filtered[:, 1], c=y_pred)
 plt.title("Unevenly Sized Blobs")
 
 plt.show() #显示图
+
+
+
+plt.figure(figsize=(12, 12))
+# Unevenly sized blobs
+X_filtered = np.vstack((X[y == 0][:500], X[y == 1][:100], X[y == 2][:10]))
+y_pred = KMeans(n_clusters=N, random_state=random_state).fit_predict(X_filtered)
+
+plt.subplot(224)#在2图里添加子图4
+plt.scatter(X_filtered[:, 0], X_filtered[:, 1], c=y_pred)
+plt.title("Unevenly Sized Blobs")
+
+plt.show() #显示图
+
+

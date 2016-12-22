@@ -36,6 +36,8 @@ print round(1.499)
 print round(1.499,3)
 print ceil(4.5)
 print floor(4.5)
+print 3//4  #整除
+print 3%4  #取余数
 
 #复数
 import cmath

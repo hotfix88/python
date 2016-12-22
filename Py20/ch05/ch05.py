@@ -14,8 +14,21 @@ x,y,z = 1,2,3
 print x,y,z
 
 #交换
+print '--------------------'
+x ,y = 1,2
 x,y = y,x
 print x,y
+
+t = x #传统交换，不支持异或操作！按位
+y = x
+x = t
+print x,y
+
+
+
+
+
+
 
 #序列解包
 values = 10,20,30
@@ -72,7 +85,7 @@ if (2):
     print 1007
 if {3,3}:
     print 1008
-    
+#其实假就是没有，真就是有！    
 
    
 #if
@@ -181,10 +194,10 @@ for i in range(99,0,-1):
         print i
         break
 
-#多层跳出
+#多层跳出，break只跳出一层！
 print '--------------------'
 for i in range(99):
-    for j in range(5):
+    for j in range(50):
         print j
         if j >= 3:
             print '--'

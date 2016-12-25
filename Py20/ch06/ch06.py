@@ -14,8 +14,9 @@ def fibs(num):
         result.append(result[-1]+result[-2])
     return result
         
-#防止多次输入        
-if n :
+#防止多次输入      
+n = 2        
+if n==2 :
     pass
 else:       
     n = raw_input('How many Fibonacci numbers do you want?')

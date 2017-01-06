@@ -14,6 +14,7 @@ class NewStyle(object):
 class OldStyle:
     name = 1
     
+print '-----------------------------'    
 class FooBar:
     def __init__(self,value = 42):
         self.somevar = value

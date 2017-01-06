@@ -7,7 +7,7 @@ E-mail: hotfix88@sina.com
 Github: hotfix88
 """
 
-
+__metaclass__ = type #确定使用新式类
 
 #迭代：一件事情做很多次！迭代器必须具有next方法
 #一个实现了next方法的对象就是迭代器

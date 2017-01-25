@@ -54,17 +54,17 @@ import numpy as np
 
 
 #  samsung 20170125 test
-
+#Intel(R) Core(TM)i5-7300hq CPU @2.50GHz  3.50GHz / 12.0GB /64bit
 #!python vectorsum.py 100000
-#python VS numpy : 0:00:00.421000 VS 0:00:00.016000
+#python VS numpy : 0:00:00.216000 VS 0:00:00.010000
 #!python vectorsum.py 1000000
-#python VS numpy : 0:00:05.297000 VS 0:00:00.250000
+#python VS numpy : 00:00:02.697000 VS  0:00:00.108000   
 #!python vectorsum.py 2000000
-#python VS numpy : 0:00:10.641000 VS 0:00:00.515000
+#python VS numpy : 0:00:05.435000  VS  00:00:00.216000  
 #!python vectorsum.py 2000000   loop 10 times!
-#python VS numpy : 0:01:46.328000 VS 0:00:03.985000
+#python VS numpy : 0:00:53.923000  VS  0:00:01.679000  
 #!python vectorsum.py 2000000   loop 30 times!
-#python VS numpy : 0:05:32.906000 VS 0:00:11.313000
+#python VS numpy : 0:02:54.922000  VS  00:00:04.868000  46multiple
 
 #%run vectorsum.py 220000 和 !python vectorsum.py 220000 在ipython中效果完全一样
 
@@ -89,7 +89,7 @@ def pythonsum(n):
 
    return c
 
-N = 1   
+N = 30  
 
 size = int(sys.argv[1])
 

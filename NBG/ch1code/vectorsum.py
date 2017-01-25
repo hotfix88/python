@@ -20,6 +20,22 @@ import numpy as np
 """
 #20161115 fengyang modify 
 
+
+
+#Intel(R) Pentium(R) T2410 @2.00Ghz  /3GB /32bit
+#!python vectorsum.py 100000
+#python VS numpy : 0:00:00.421000 VS 0:00:00.016000
+#!python vectorsum.py 1000000
+#python VS numpy : 0:00:05.297000 VS 0:00:00.250000
+#!python vectorsum.py 2000000
+#python VS numpy : 0:00:10.641000 VS 0:00:00.515000
+#!python vectorsum.py 2000000   loop 10 times!
+#python VS numpy : 0:01:46.328000 VS 0:00:03.985000
+#!python vectorsum.py 2000000   loop 30 times!
+#python VS numpy : 0:05:32.906000 VS 0:00:11.313000
+
+
+#asus
 #Intel(R) Core(TM)i5-3230M CPU @2.60GHz  2.60GHz / 12.0GB /64bit
 #!python vectorsum.py 100000
 #python VS numpy : 0:00:00.301000  VS  0:00:00.010000   30multiple
@@ -36,7 +52,9 @@ import numpy as np
 
 
 
-#Intel(R) Pentium(R) T2410 @2.00Ghz  /3GB /32bit
+
+#  samsung 20170125 test
+
 #!python vectorsum.py 100000
 #python VS numpy : 0:00:00.421000 VS 0:00:00.016000
 #!python vectorsum.py 1000000
@@ -47,7 +65,6 @@ import numpy as np
 #python VS numpy : 0:01:46.328000 VS 0:00:03.985000
 #!python vectorsum.py 2000000   loop 30 times!
 #python VS numpy : 0:05:32.906000 VS 0:00:11.313000
-
 
 #%run vectorsum.py 220000 和 !python vectorsum.py 220000 在ipython中效果完全一样
 

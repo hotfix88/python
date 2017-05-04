@@ -49,7 +49,7 @@ plt.show()
 
 
 
-
+'''
 
 #----------------------------------
 dataMat = mat(kMeans.loadDataSet('testSet.txt'))
@@ -66,10 +66,7 @@ plt.scatter(list(dataMat[:,0]),list(dataMat[:,1]),c='blue',s=25,alpha=0.4,marker
 plt.show()
 
 
-
-
-
-'''
+ 
 import matplotlib.pyplot as plt
 import numpy as np
  

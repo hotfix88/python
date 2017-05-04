@@ -50,7 +50,7 @@ plt.show()
 
 
 
-
+import kMeans
 #----------------------------------
 dataMat = mat(kMeans.loadDataSet('testSet.txt'))
 #箱子图

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jun 01 12:16:25 2017
@@ -47,13 +48,13 @@ print ord(t)
 print chr(65)
 print chr(0x41)
 
-
 print u'中文'
+print u'中文'.encode('utf-8')
+print 'abc'.decode('utf-8')
 #print u'中文'.encode('utf-8')
 #print u'中文'.encode('utf-8')
 
 #print u'以下在命令行中展示'
-'''
-print u'ABC'.encode('utf-8')
-print u'中文'.encode('utf-8')
-'''
+#print u'ABC'.encode('utf-8')
+#print u'中文'.encode('utf-8')
+

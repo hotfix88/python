@@ -16,9 +16,9 @@ def readfile1(filename,sp='\t'):
   return lines2
 
 
-doc = readfile1('D://doc3.txt')
+doc = readfile1('D://doc2_input.txt')
 
-f = file('D://doc4.txt','w+')
+f = file('D://doc2_output.txt','w+')
 for line in doc:
     f.write(line)
 f.close()

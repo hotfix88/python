@@ -9,11 +9,11 @@ Created on Fri Jun 09 16:02:01 2017
 #大小写转化
 
 def readfile1(filename,sp='\t'):
-  lines=[line for line in file(filename)]
-  lines2=[]
-  for line in lines:
-      lines2.append(line.upper())
-  return lines2
+    lines=[line for line in file(filename)]
+    lines2=[]
+    for line in lines:
+        lines2.append(line.upper())
+    return lines2
 
 
 doc = readfile1('.//doc2_input.TXT')

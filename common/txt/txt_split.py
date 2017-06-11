@@ -6,6 +6,8 @@ Created on Mon Jun 12 00:26:04 2017
 @author: fyso
  
 """
+#文本的分解/大小写转换函数！按行处理
+
 #增加字段的函数
 
 def readfile1(filename,sp='\t'):

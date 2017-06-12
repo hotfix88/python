@@ -11,18 +11,18 @@ Github: hotfix88
 Function:
 Author  : FengYang
 Remark  :
-@create : 
+@create :
 @modify :
 '''
 
-f2 = 'D:\\Git\\python\\Common\\plot\\201609-11.csv'
+f2 = '201609-11.csv'
 fr = open(f2)
 s = [line.strip().split(',') for line in fr.readlines()]
 a0 = [int(s[i][0]) for i in range(len(s)) if i > 0 and s[i][0] <> '']
 a1 = [int(s[i][1]) for i in range(len(s)) if i > 0 and s[i][0] <> '']
-a2 = [int(s[i][2]) for i in range(len(s)) if i > 0 and s[i][0] <> '']   
-    
-    
+a2 = [int(s[i][2]) for i in range(len(s)) if i > 0 and s[i][0] <> '']
+
+
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -66,19 +66,19 @@ plt.scatter(list(dataMat[:,0]),list(dataMat[:,1]),c='blue',s=25,alpha=0.4,marker
 plt.show()
 
 
- 
+
 import matplotlib.pyplot as plt
 import numpy as np
- 
+
 all_data = [np.random.normal(0, std, 100) for std in range(1, 4)]
- 
+
 fig = plt.figure(figsize=(8,6))
- 
+
 plt.boxplot(all_data,
             notch=False, # box instead of notch shape
             sym='rs',    # red squares for outliers
             vert=True)   # vertical box aligmnent
- 
+
 plt.xticks([y+1 for y in range(len(all_data))], ['x1', 'x2', 'x3'])
 plt.xlabel('measurement x')
 t = plt.title('Box plot')

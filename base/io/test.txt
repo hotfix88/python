@@ -1,0 +1,40 @@
+Blog	china	kids	music	yahoo	want	wrong	service	tech	saying	lots	had	address	working	following	years	didn	internet	wants	photos
+The Superficial - Because You're Ugly	0	1	0	0	3	3	0	0	3	0	6	0	1	0	4	3	0	0	0
+Wonkette	0	2	1	0	6	2	1	0	4	5	25	0	0	0	6	12	4	2	1
+Publishing 2.0	0	0	7	4	0	1	3	6	0	0	1	0	0	0	1	0	1	0	0
+Eschaton	0	0	0	0	5	3	2	0	1	0	1	0	1	0	0	0	0	1	0
+Blog Maverick	2	14	17	2	45	11	8	0	4	7	24	2	4	3	12	1	11	8	0
+Mashable!	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	1	0
+we make money not art	0	1	1	0	6	0	0	1	0	1	21	3	20	4	6	2	2	0	5
+GigaOM	6	0	0	2	1	0	3	1	0	0	1	0	0	1	1	2	1	1	0
+Joho the Blog	0	0	1	4	0	0	1	0	0	0	4	1	0	0	1	0	2	0	0
+Neil Gaiman's Journal	0	0	0	0	2	1	0	0	3	8	28	0	1	0	5	1	1	4	0
+Signal vs. Noise	0	0	0	0	12	2	0	2	4	3	8	2	2	0	1	2	0	1	0
+lifehack.org	0	0	0	0	2	1	0	0	0	2	0	0	1	1	1	0	0	0	0
+Hot Air	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Online Marketing Report	0	0	0	3	0	0	0	0	0	0	0	0	2	3	0	0	0	0	0
+Kotaku	0	5	2	0	10	1	3	0	4	1	13	0	0	1	0	1	1	1	1
+Talking Points Memo: by Joshua Micah Marshall	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	2	0
+John Battelle's Searchblog	0	0	0	3	1	0	1	0	0	0	1	1	0	0	0	0	3	0	0
+43 Folders	0	0	0	0	1	0	0	0	1	1	0	0	0	0	1	0	0	0	0
+Daily Kos	0	1	0	0	9	4	0	0	1	1	6	0	0	0	2	3	0	1	0
+Deadspin	1	2	3	0	0	5	1	0	4	1	25	0	0	0	4	4	2	0	0
+Go Fug Yourself	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0
+O'Reilly Radar	7	0	3	4	6	0	7	1	1	0	1	1	4	1	2	0	1	0	3
+Andrew Sullivan | The Daily Dish	0	0	0	0	0	1	2	0	1	0	1	1	0	0	1	2	0	0	0
+Lifehacker	0	0	3	1	11	1	0	3	0	2	2	3	3	0	3	1	8	0	4
+Google Operating System	0	0	4	5	16	0	7	0	0	0	1	10	0	1	1	2	2	3	10
+Valleywag	1	3	3	11	4	4	7	10	3	0	5	1	1	1	7	6	11	0	1
+Gizmodo	2	0	6	1	0	0	0	2	0	1	1	0	1	0	2	2	3	0	4
+ScienceBlogs : Combined Feed	0	2	5	0	5	0	0	0	2	1	8	0	0	2	6	2	0	0	0
+Michelle Malkin	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	1	0	0	1
+SimpleBits	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0
+Slashdot	0	0	4	3	0	0	0	1	0	0	0	0	0	0	6	1	3	0	0
+Gothamist	0	3	3	0	5	0	0	0	4	1	22	0	3	2	7	5	1	2	1
+BuzzMachine	0	0	1	1	1	1	0	0	2	0	0	0	1	0	1	1	3	0	0
+Sifry's Alerts	0	1	0	1	5	2	10	1	0	6	9	0	3	2	10	0	1	1	2
+Topix.net Weblog	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	3
+The Viral Garden	0	0	25	0	7	1	0	0	2	0	16	1	1	1	3	4	3	2	0
+Micro Persuasion	0	0	3	1	1	0	1	0	1	0	1	0	1	1	0	0	1	1	0
+Cool Hunting	0	0	2	0	1	0	0	0	0	0	1	0	0	1	1	0	0	0	0
+SpikedHumor	0	0	2	0	1	0	0	0	0	0	1	0	1	0	0	0	0	0	0

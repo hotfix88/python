@@ -1,24 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jun 13 23:34:25 2017
-Mail : fyso@163.com
-@author: fyso   CMCC.JS.FengYang
+Created on Mon Jun 12 22:55:03 2017
+
+@author: fyso
 """
 
-import sys
-
 #大小写转化
-
-def help():
-    print 'This is txt2'
-    print '文件名称;选项;'
-    print '0:全转换成大写(默认)'
-    print '1:全转换成小写'
-    print '2:首字母大写，其余全部小写'
-    print '3:标题首字大写'
-    print '4:字符拼接处理'
-
 
 def readfile1(filename,sp=0):
     lines=[line for line in file(filename)]
@@ -41,26 +29,26 @@ def readfile1(filename,sp=0):
     return lines2,linenum
 
 
+def test(infilename = 'txt1.txt',sp=0):
+    doc,num = readfile1(infilename,sp)
+    outfilename = 'out_'+infilename
 
-if len(sys.argv) == 1:
-    infilename = 'test.txt'
-    sp = 0
-elif len(sys.argv) == 3:
-    infilename = sys.argv[1]
-    sp = int(sys.argv[2])
-
-doc,num = readfile1(infilename,sp)
-outfilename = 'out_'+infilename
-
-f = file(outfilename,'w+')
-for line in doc:
-    f.write(line)
-print 'Origin file : ' , infilename
-print 'Create file : ' , outfilename
-print 'Total lines : ',num
+    f = file(outfilename,'w+')
+    for line in doc:
+        f.write(line)
+    print 'Origin file : ' , infilename
+    print 'Create file : ' , outfilename
+    print 'Total lines : ',num
 #    print '1'
 
-f.close()
+    f.close()
 
+print 'This is txt2'
+print '文件名称;选项;'
+print '0:全转换成大写(默认)'
+print '1:全转换成小写'
+print '2:首字母大写，其余全部小写'
+print '3:标题首字大写'
+print '4:字符拼接处理'
 
-
+print  2

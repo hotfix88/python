@@ -20,7 +20,7 @@ def help():
     print '4:字符拼接处理'
 
 
-def readfile1(filename,sp=0):
+def readfile(filename,sp=0):
     lines=[line for line in file(filename)]
     lines2=[]
     linenum = 0
@@ -33,13 +33,19 @@ def readfile1(filename,sp=0):
             lines2.append(line.title())#标题首字大写
         elif sp == 4:
             line = 'JSDM.' + line[:-1] + '@BASCM' + '\n' #字符拼接
-            print 2
             lines2.append(line)
+        elif sp == 5:
+            line = 'JSDM.' + line[:-1] + '@BASCM' + '\n' #字符拼接,大写
+            lines2.append(line.upper())
+        elif sp == 6:
+            line = 'JSDM.' + line[:-1] + '@BASCM' + '\n' #字符拼接，小写
+            lines2.append(line.lower())
         else:
             lines2.append(line.upper())#默认大写
         linenum +=1
     return lines2,linenum
 
+#!python txt2.py test.txt 0
 
 
 if len(sys.argv) == 1:
@@ -49,7 +55,7 @@ elif len(sys.argv) == 3:
     infilename = sys.argv[1]
     sp = int(sys.argv[2])
 
-doc,num = readfile1(infilename,sp)
+doc,num = readfile(infilename,sp)
 outfilename = 'out_'+infilename
 
 f = file(outfilename,'w+')
@@ -58,7 +64,10 @@ for line in doc:
 print 'Origin file : ' , infilename
 print 'Create file : ' , outfilename
 print 'Total lines : ',num
-#    print '1'
+
+if num > 0:
+    print 'The laseline: ' ,doc[-1]
+
 
 f.close()
 

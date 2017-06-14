@@ -18,7 +18,7 @@ def readfile1(filename,sp='\t'):
         lines2.append(line)
         linenum += 1
     return lines2,linenum
-#test
+#test功能已经囊括在txt2中，可以删除了！
 
 def test(infilename = 'txt1.txt'):
     doc,num = readfile1(infilename)

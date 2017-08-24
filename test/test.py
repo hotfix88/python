@@ -10,7 +10,9 @@ import numpy as np
 
 mv = [1,2,3,4,5]
 
-mv.append(88)
+mv.append(888)
 
 print mv
+
+print 3
 

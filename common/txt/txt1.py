@@ -5,7 +5,7 @@ Created on Mon Jun 12 22:37:22 2017
 
 @author: fyso
 """
-
+ 
 #按行增加字符处理！
 
 def readfile1(filename,sp='\t'):

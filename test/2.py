@@ -1,12 +1,9 @@
-
-Hello, this is a snippet.
-/*
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-Hello, this is a snippet.
-/*
+'''
+Author:FengYang@CMCC
+Date  :2017
+Contents:
+'''
+   
 
- */
- */
- */
- */

@@ -8,7 +8,7 @@ Mail : fyso@163.com
 
 import sys
 
-#大小写转化
+#大小写转化，乱码么？
 
 def help():
     print 'This is txt2'
@@ -44,6 +44,10 @@ def readfile(filename,sp=0):
             lines2.append(line.upper())#默认大写
         linenum +=1
     return lines2,linenum
+
+
+mv = [1,3,3]
+
 
 #!python txt2.py test.txt 0
 

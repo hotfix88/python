@@ -7,6 +7,13 @@ Created on Thu Jun 01 14:49:27 2017
 """
 
 
+"""
+ Author:      fyso
+ DateTime:    2017-08-25 16:07:36
+ Description: modify
+"""
+
+
 classmates = ['Michael', 'Bob', 'Tracy']
 print classmates
 
@@ -34,3 +41,4 @@ t[2][0] = 'X'
 t[2][1] = 'Y'
 print t
 #表面上看，tuple的元素确实变了，但其实变的不是tuple的元素，而是list的元素。
+

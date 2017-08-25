@@ -6,6 +6,14 @@ Created on Thu Jun 01 12:16:25 2017
 @author: Administrator   fengyang  hotfix88@github.com
 """
 
+"""
+ Author:      fyso
+ DateTime:    2017-08-25 15:39:34
+ Description: modify！
+"""
+
+#sublime是一个神级的编辑工具，非常的好使啊！今天开始，重新学习python！参考廖雪峰的学习资料！
+
 
 #数据类型和变量
 a = 100
@@ -57,4 +65,6 @@ print 'abc'.decode('utf-8')
 #print u'以下在命令行中展示'
 #print u'ABC'.encode('utf-8')
 #print u'中文'.encode('utf-8')
+
+
 

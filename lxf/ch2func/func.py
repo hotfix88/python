@@ -99,3 +99,5 @@ print calc(1,2,3,4)
 #如果已经有一个list或者tuple，要调用一个可变参数怎么办?用下面的方式，非常常见！
 mv = [i for i in range(5)]  #
 print calc(*mv)
+
+#

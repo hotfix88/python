@@ -57,6 +57,8 @@ def fib(max):
         a, b = b, a + b
         n = n + 1
 print fib(6)
+#函数可以无穷调多次
+#但是生成器有所区别
 print '------生成器----------'
 def fib(max):
     n, a, b = 0, 0, 1
@@ -72,13 +74,16 @@ fib(6).next()
 for i in fib(6):
 	print i
 
+for i in fib(6): #这里是一个新的轮回了！
+	print i
 print '--------生成器调用2-------'
 g = fib(6)
 print g.next()
 print g.next()
 for n in g:
 	print n
-
+for n in g: #已经无法循环
+	print n
 
 # 小结
 # generator是非常强大的工具，在Python中，可以简单地把列表生成式改成generator，

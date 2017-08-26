@@ -6,7 +6,7 @@ class AddInfocCommand(sublime_plugin.TextCommand):
             {
                 "contents":                 
                 "/**""\n"
-                " * Author:      fyso""\n"
+                " * Author:      fyso@163.com""\n"
                 " * DateTime:    "  "%s"  %datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +"\n"
                 " * Description: Description""\n"
                 " */"

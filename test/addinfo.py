@@ -9,7 +9,7 @@ class AddInfoCommand(sublime_plugin.TextCommand):
                 "#!/usr/bin/env python\n"
                 "# -*- coding: utf-8 -*-\n"
                 "\"\"\"\n"
-                " Author:      fyso""\n"
+                " Author:      fyso@163.com""\n"
                 " DateTime:    "  "%s"  %datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +"\n"
                 " Description: Description""\n"
                 "\"\"\"\n"

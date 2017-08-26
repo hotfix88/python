@@ -3,7 +3,7 @@
 """
  Author:      fyso
  DateTime:    2017-08-25 22:45:40
- Description: Description
+ Description: 函数定义，固定参数，默认参数
 """
 
 print '-----------基本函数-----------'
@@ -61,43 +61,3 @@ print add_end2()
 # 此外，由于对象不变，多任务环境下同时读取对象不需要加锁，同时读一点问题都没有。我们在编写程序时，
 # 如果可以设计一个不变对象，那就尽量设计成不变对象。
 
-print '------------可变参数1-----------'
-def calc(numbers):
-    sum = 0
-    for n in numbers:
-        sum = sum + n * n
-    return sum
-mv = [1,2,3,4]
-print mv
-print calc(mv)
-# print calc([for i in range(10)])
-
-mv = [i for i in range(5)]  #列表推倒式，只支持list
-print mv
-print calc(mv)
-
-
-mv = (1,2,3,4) #tuple
-print mv
-print calc(mv)
-
-# print calc(1,2,3,4)   不可以直接调用，必须组装为list或者tuple，否则要用下面的方式
-
-print '------------可变参数2-----------'
-# 定义可变参数和定义list或tuple参数相比，仅仅在参数前面加了一个*号。
-# 在函数内部，参数numbers接收到的是一个tuple，
-# 因此，函数代码完全不变。但是，调用该函数时，可以传入任意个参数，包括0个参数：
-def calc(*numbers):
-    sum = 0
-    for n in numbers:
-        sum = sum + n * n
-    return sum
-
-print calc()
-print calc(1,2,3,4)
-
-#如果已经有一个list或者tuple，要调用一个可变参数怎么办?用下面的方式，非常常见！
-mv = [i for i in range(5)]  #
-print calc(*mv)
-
-#

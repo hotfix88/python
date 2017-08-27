@@ -3,7 +3,7 @@
 """
  Author:      fyso@163.com
  DateTime:    2017-08-26 20:27:45
- Description: sorted排序！
+ Description: 高阶函数之  sorted   排序 
 """
 
 print '-----------1 默认排序 -----------'

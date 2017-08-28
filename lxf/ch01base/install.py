@@ -19,6 +19,61 @@ import sys
 print sys.version_info
 # sys.version_info(major=2, minor=7, micro=13, releaselevel='final', serial=0)
 
+
+
+# ======================2.7.10.3版本下的安装==============================
+# C:\Users\fyso>pip install PIL
+# Collecting PIL
+#   Could not find a version that satisfies the requirement PIL (from versions: )
+# No matching distribution found for PIL
+# You are using pip version 7.1.2, however version 9.0.1 is available.
+# You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+
+# 更新pip
+# C:\Users\fyso>python -m pip install --upgrade pip
+# Requirement already up-to-date: pip in c:\python27\lib\site-packages
+#使用pip list看安装包情况
+#
+#C:\Users\fyso>python -m pip install --upgrade pip
+# Collecting pip
+#   Downloading pip-9.0.1-py2.py3-none-any.whl (1.3MB)
+#     100% |████████████████████████████████| 1.3MB 301kB/s
+# Installing collected packages: pip
+#   Found existing installation: pip 7.1.2
+#     Uninstalling pip-7.1.2:
+#       Successfully uninstalled pip-7.1.2
+# Successfully installed pip-9.0.1
+
+
+# C:\Users\fyso>pip install PIL
+# Collecting PIL
+#   Could not find a version that satisfies the requirement PIL (from versions: )
+# No matching distribution found for PIL
+
+#安装不了！
+
+
+#   使用豆瓣！
+# C:\Users\fyso>pip install PIL -i http://pypi.douban.com/simple
+# Collecting PIL
+#   The repository located at pypi.douban.com is not a trusted or secure host and is being ignored. If this repository is
+# available via HTTPS it is recommended to use HTTPS instead, otherwise you may silence this warning and allow it anyways
+# with '--trusted-host pypi.douban.com'.
+#   Could not find a version that satisfies the requirement PIL (from versions: )
+# No matching distribution found for PIL
+
+
+#FY：查了下，现在PIL 叫 Pillow了！！
+#Pillow (3.0.0)
+#
+#安装它之后一定要注意的是import Image一定要换成
+#from PIL import Image 
+# 还有一项需要注意的是，如果你先安装了官方的PIL的话，需要先卸载PIL再安装pillow，
+# 并且要保证卸载的时候把site-packages中的PIL文件删掉了，
+# 不然的话安装pillow里的PIL会与之前已经存在的PIL合并，导致一些意想不到的错误
+
+#===========================手工安装！废弃！=================================
 # 安装完毕后，系统路径  PATH=C:\Python27\;C:\Python27\Scripts;
 
 #安装numpy！
@@ -39,13 +94,6 @@ print sys.version_info
 #   
 
 
-# 更新pip
-# C:\Users\fyso>python -m pip install --upgrade pip
-# Requirement already up-to-date: pip in c:\python27\lib\site-packages
-#使用pip list看安装包情况
-
-#   使用豆瓣！
-#   C:\Users\fyso>pip install PIL -i http://pypi.douban.com/simple
 
 
 

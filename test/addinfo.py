@@ -13,5 +13,6 @@ class AddInfoCommand(sublime_plugin.TextCommand):
                 " DateTime:    "  "%s"  %datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +"\n"
                 " Description: Description""\n"
                 "\"\"\"\n"
+                __author__ = 'FengYang'
             }
         )		

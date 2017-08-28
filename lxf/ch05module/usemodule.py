@@ -6,4 +6,33 @@
  Description: Description
 """
 
-print 4
+' a test module '
+
+__author__ = 'FengYang'
+
+import sys
+
+def test():
+    args = sys.argv
+    if len(args)==1:
+        print 'Hello, world!'
+    elif len(args)==2:
+        print 'Hello, %s!' % args[1]
+    else:
+        print 'Too many arguments!'
+
+
+
+if __name__=='__main__':
+    test()
+
+''' 测试结果
+D:\git\python\lxf\ch05module>python usemodule.py
+Hello, world!
+
+D:\git\python\lxf\ch05module>python usemodule.py nihao
+Hello, nihao!
+
+D:\git\python\lxf\ch05module>python usemodule.py nihao 22
+Too many arguments!
+'''

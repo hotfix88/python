@@ -11,10 +11,10 @@ __author__ = 'FengYang'
 #自己完整安装python难度太大！winpython适合懒惰人士，或者搞科学计算的人士,！
 #
 #安装的时候选择64bit，这样使用的内存范围可以大很多。
-#安装的时候选择pip包！
-#安装的时候选择add to sys path，这样就不用手工设置目录了！
+#手工安装的时候选择pip包！
+#手工安装的时候选择add to sys path，这样就不用手工设置目录了！
 
-#看版本
+#看python版本，注意，小版本是看不到的
 import sys
 print sys.version_info
 # sys.version_info(major=2, minor=7, micro=13, releaselevel='final', serial=0)

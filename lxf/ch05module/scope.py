@@ -47,9 +47,4 @@ def greeting(name):
 # 'Hi, aa'
 
 
-from PIL import Image
 
-im = Image.open('l.png')
-
-print im
-print im.format, im.size, im.mode

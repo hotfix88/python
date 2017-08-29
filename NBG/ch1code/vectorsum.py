@@ -89,7 +89,7 @@ def pythonsum(n):
 
    return c
 
-N = 30  
+N = 1  
 
 size = int(sys.argv[1])
 

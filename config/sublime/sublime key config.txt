@@ -1,0 +1,6 @@
+[
+
+    { "keys": ["ctrl+shift+c"], "command": "add_infoc" },
+    { "keys": ["ctrl+shift+o"], "command": "add_info" },
+
+]

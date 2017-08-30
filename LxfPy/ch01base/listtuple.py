@@ -13,6 +13,10 @@ Created on Thu Jun 01 14:49:27 2017
  Description: modify
 """
 
+#从 2017-08-25 重新开始python的学习！
+
+
+
 
 classmates = ['Michael', 'Bob', 'Tracy']
 print classmates

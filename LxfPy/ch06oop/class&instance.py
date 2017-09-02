@@ -123,7 +123,8 @@ lisa = Student('Lisa Simpson', 87)
 bart.age = 8
 lisa.home = 'NanJing'
 print bart.age
-
+print dir(bart)
+print dir(lisa)
 
 print '---------------6  不从object继承的类 ------------------'
 class Teacher():

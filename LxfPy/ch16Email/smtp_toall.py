@@ -46,7 +46,7 @@ def loadDataSet(fileName,sp=','):      #general function to parse tab -delimited
 # yuanpeng	SSX33#ks	袁鹏	yuanpengsgs@js.chinamobile.com
 
 
-data,id,pwd,name,addr,num = loadDataSet('all.csv',',')
+data,id,pwd,name,addr,num = loadDataSet('test2.csv',',')  #all.csv
 
 #发件人和服务器
 from_addr = 'fengyangsgs@js.chinamobile.com'
@@ -72,7 +72,7 @@ for i in range(num):
 	msg = MIMEText(NAME+NOTICE+ID+idr+'\n'+PWD+pwdr+'\n'+DATE, 'plain', 'utf-8')
 
 	#标题
-	msg['Subject'] = Header(u'您好，您的电渠数据分析平台密码已经更新，请惠存！', 'utf-8').encode()
+	msg['Subject'] = Header(u'您好，您的电渠数据分析平台密码已经更新，请留存！', 'utf-8').encode()
 
 	import smtplib
 	server = smtplib.SMTP(smtp_server, 25) # SMTP协议默认端口是25
@@ -81,9 +81,8 @@ for i in range(num):
 	server.sendmail(from_addr, [to_addr], msg.as_string())
 	server.quit()
 
-	time.sleep(0.5)
+	time.sleep(0.2)
 	count+=1
 
 print '-------------------'
-print count
-print 'send!'
+print '%s Emails send!'%count

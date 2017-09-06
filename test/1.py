@@ -12,3 +12,8 @@ print mv
 print 56
 
 
+count = 1
+print '%s Emails send!'%count
+
+
+

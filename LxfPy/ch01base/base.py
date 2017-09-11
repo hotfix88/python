@@ -68,3 +68,4 @@ print 'abc'.decode('utf-8')
 
 
 
+# chcp 65001

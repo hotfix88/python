@@ -1,0 +1,2 @@
+0123456789
+Hello python!We don't talk anymore你好

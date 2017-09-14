@@ -68,4 +68,23 @@ print 'abc'.decode('utf-8')
 
 
 
+
+
+"""
+ Author:      fyso@163.com fengyangsgs@js.chinamobile.com
+ DateTime:    2017-09-14 16:22:15
+ Description: Description
+"""
+print '------------我增加了一些东西-----------'
+
+d = {'a':1,'b':2}
+print d
+print type(d)
+print d['a']
+d2 = d
+print d is d2 #是一个对象
+print d == d2 #内容相同
+print type(d),type(d2)
+#如果是dump和load之后，则内容相同，但是不是一个对象，见第9章 pickling.py
+
 # chcp 65001

@@ -31,6 +31,7 @@ except ImportError:
 #写入字符串
 d = dict(name='Bob', age=20, score=88)
 s = pickle.dumps(d)
+print s
 print type(s)
 
 # 写入一个file-like Object

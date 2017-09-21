@@ -88,3 +88,11 @@ print type(d),type(d2)
 #如果是dump和load之后，则内容相同，但是不是一个对象，见第9章 pickling.py
 
 # chcp 65001
+
+
+
+s = 'ABC\\-001' # Python的字符串
+print s
+s = r'ABC\-001'  #因此我们强烈建议使用Python的r前缀，就不用考虑转义的问题了：
+print s
+

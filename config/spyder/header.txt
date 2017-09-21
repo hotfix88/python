@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Created on %(date)s
+
+@author: %(username)s
+"""
+
+
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+ Author:      fyso@163.com fengyangsgs@js.chinamobile.com
+ DateTime:    %(date)s
+ Description: Description
+"""
+__author__ = 'FengYang'

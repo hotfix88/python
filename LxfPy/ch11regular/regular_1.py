@@ -161,4 +161,5 @@ print m.groups()
 
 #其实还是很有难度的！   'someone22@gmail.com'   “xxx@mail.xxx.edu.cn" 都不行！
 #
+#FY：只是进行了很初级的学习！真正使用的时候再深入吧！
 

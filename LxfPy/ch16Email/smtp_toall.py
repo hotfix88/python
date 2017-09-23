@@ -50,8 +50,22 @@ data,id,pwd,name,addr,num = loadDataSet('test2.csv',',')  #all.csv
 
 #发件人和服务器
 from_addr = 'fengyangsgs@js.chinamobile.com'
-password = 'Fy955785'
-smtp_server = '172.16.121.102'
+password = 'Fy955786'
+smtp_server = '221.176.66.74' #ping mail.chinamobile.com   外网地址！
+ #'172.16.121.102'  内网地址！
+
+#用来给自己发是可以的。但是fyso无法发给 公司邮箱。
+#from_addr = 'fyso@163.com'
+#password = 'Deki102039'
+#smtp_server = '220.181.12.14' #ping smtp.163.com
+'''
+服务器地址:
+POP3服务器: pop.163.com
+SMTP服务器: smtp.163.com
+IMAP服务器: imap.163.com
+'''
+
+
 count = 0
 
 for i in range(num):

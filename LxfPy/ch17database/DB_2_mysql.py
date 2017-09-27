@@ -111,9 +111,11 @@ cursor = conn.cursor()
 print cursor
 
 
-#建表 book
+#删表 book
 cursor.execute('drop table book')
 conn.commit()
+
+#建表 book
 sql = 'create table book (id varchar(20) , name varchar(100))'   
 cursor.execute(sql)
 conn.commit()    

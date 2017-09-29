@@ -9,45 +9,45 @@ __author__ = 'FengYang'
 
 import tree
 
-print '---------------------------------'
+print('---------------------------------')
 
 myDat,labels = tree.createDataSet()
-print myDat
-print labels
+print (myDat) 
+print (labels) 
 
-print tree.calcShannonEnt(myDat)
+print( tree.calcShannonEnt(myDat)) 
 
-print '----------------修改某个值-----------------'
+print('----------------修改某个值-----------------') 
 myDat[0][-1]='maybe'
-print myDat
-print tree.calcShannonEnt(myDat)
+print( myDat) 
+print (tree.calcShannonEnt(myDat)) 
 
-print '---------------最小熵------------------'
+print( '---------------最小熵------------------') 
 myDat = [[1, 1, 'yes'],
                [1, 1, 'yes'],
                [1, 0, 'yes'],
                [0, 1, 'yes'],
                [0, 1, 'yes']]
-print myDat
-print tree.calcShannonEnt(myDat)   
+print ( myDat) 
+print ( tree.calcShannonEnt(myDat)   ) 
 
 myDat = [[1, 1, 'no'],
                [1, 1, 'no'],
                [1, 1, 'no'],
                [1, 1, 'no'],
                [1, 1, 'no']]
-print myDat
-print tree.calcShannonEnt(myDat)  
+print( myDat) 
+print( tree.calcShannonEnt(myDat) )  
 
-print '---------------最大熵------------------'
+print( '---------------最大熵------------------') 
 
 myDat = [[1, 1, 'yes'],
                [1, 1, 'no'],
                [1, 0, 'yee'],
                [0, 1, 'sss'],
                [0, 1, 'OK']]
-print myDat
-print tree.calcShannonEnt(myDat)  
+print( myDat) 
+print( tree.calcShannonEnt(myDat)  ) 
 
 
 myDat = [[1, 0, 'yes'],
@@ -55,43 +55,43 @@ myDat = [[1, 0, 'yes'],
                [0, 0, 'yee'],
                [0, 1, 'sss'],
                [0, 1, 'OK']]
-print myDat
-print tree.calcShannonEnt(myDat)  
+print( myDat) 
+print( tree.calcShannonEnt(myDat)  ) 
 
 #熵值最后只和第三个值--即分类标示有关！
 
-print '----------------补充知识：append 和 extend 区别-----------------'
+print( '----------------tips ：append 和 extend 区别-----------------') 
 a = [1,2,3]
 b = [4,5,6]
-print a,b
+print( a,b) 
 a.append(b)
-print a,'\n'
+print( a,'\n') 
 
 a = [1,2,3]
 b = [4,5,6]
-print a,b
+print( a,b) 
 a.extend(b)
-print a
+print( a) 
 
-print '---------------测试函数：------------------'
-
-myDat,labels = tree.createDataSet()
-print myDat
-print '(myDat,0,1) = ',tree.splitDataSet(myDat,0,1)
-print '(myDat,0,0) = ',tree.splitDataSet(myDat,0,0)
-print '(myDat,1,0) = ',tree.splitDataSet(myDat,1,0)
-print '(myDat,1,1) = ',tree.splitDataSet(myDat,1,1)
-
-
-print '-----------------选择最好的数据集划分方式----------------'
+print( '---------------测试函数：------------------') 
 
 myDat,labels = tree.createDataSet()
-print 'The best Feature is : ',tree.chooseBestFeatureToSplit(myDat)
+print (myDat)
+print( '(myDat,0,1) = ',tree.splitDataSet(myDat,0,1)) 
+print( '(myDat,0,0) = ',tree.splitDataSet(myDat,0,0)) 
+print( '(myDat,1,0) = ',tree.splitDataSet(myDat,1,0)) 
+print( '(myDat,1,1) = ',tree.splitDataSet(myDat,1,1)) 
 
-print '-----------------熵值验证----------------'
+
+print( '-----------------选择最好的数据集划分方式----------------') 
+
 myDat,labels = tree.createDataSet()
-print myDat
-print tree.calcShannonEnt(myDat)   
+print ('The best Feature is : ',tree.chooseBestFeatureToSplit(myDat)) 
+
+print( '-----------------熵值验证----------------') 
+myDat,labels = tree.createDataSet()
+print( myDat) 
+print( tree.calcShannonEnt(myDat)   ) 
 
 
 

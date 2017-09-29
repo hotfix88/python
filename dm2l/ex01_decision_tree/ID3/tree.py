@@ -93,11 +93,11 @@ def chooseBestFeatureToSplit(dataSet):
             bestFeature = i
     return bestFeature                      #returns an integer
 
-print 'end'    
+print( 'end'   ) 
 
 
 
-
+d = createDataSet()
 
 
 

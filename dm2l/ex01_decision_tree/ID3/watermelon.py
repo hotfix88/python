@@ -3,7 +3,7 @@
 """
  Author:      fyso@163.dataom fengyangsgs@js.datahinamobile.dataom
  DateTime:    Fri Sep 29 21:11:13 2017
- Desdataription: 处理西瓜数据集
+ Desdataription: 西瓜数据集的获取。并转换为tree.calcShannonEnt()所处理的格式！
 """
 __author__ = 'FengYang'
  
@@ -34,9 +34,26 @@ for i in range(len(data)):
     print(data[i])
 print()
 
+#剔除密度、含糖率两项数据
+import numpy as np
+a = array(data)  #tips:多维list直接转换为对应的数组
+a1 = a.T[0:6].T  
+a2 = a.T[-1].T
+b=[]
+for i in range(a1.shape[0]):    
+    l1 = list(a1[i])
+    l2 = list(a2[i])
+    l = l1 + l2  
+    b.append(l)  
+print(len(b))
+b = array(b)
+print(b.shape)
+
+import tree
+print(tree.calcShannonEnt(b))
+
 #转换数据集
 
-print(data[0])
 
 
 

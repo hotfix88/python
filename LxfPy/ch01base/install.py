@@ -3,7 +3,7 @@
 """
  Author:      fyso@163.com
  DateTime:    2017-08-28 22:50:18
- Description: Description
+ Description:   注意windows下pip list看相关版本。
 """
 __author__ = 'FengYang'
 
@@ -14,10 +14,19 @@ __author__ = 'FengYang'
 #手工安装的时候选择pip包！
 #手工安装的时候选择add to sys path，这样就不用手工设置目录了！
 
+#import sys
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
+
+
 #看python版本，注意，小版本是看不到的
 import sys
-print sys.version_info
+print(sys.version_info)
 # sys.version_info(major=2, minor=7, micro=13, releaselevel='final', serial=0)
+
+import sys  
+print(sys.getdefaultencoding())  #ascii
+
 
 
 

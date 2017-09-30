@@ -18,9 +18,9 @@ Remark  :
 f2 = '201609-11.csv'
 fr = open(f2)
 s = [line.strip().split(',') for line in fr.readlines()]
-a0 = [int(s[i][0]) for i in range(len(s)) if i > 0 and s[i][0] <> '']
-a1 = [int(s[i][1]) for i in range(len(s)) if i > 0 and s[i][0] <> '']
-a2 = [int(s[i][2]) for i in range(len(s)) if i > 0 and s[i][0] <> '']
+a0 = [int(s[i][0]) for i in range(len(s)) if i > 0 and s[i][0] != '']
+a1 = [int(s[i][1]) for i in range(len(s)) if i > 0 and s[i][0] != '']
+a2 = [int(s[i][2]) for i in range(len(s)) if i > 0 and s[i][0] != '']
 
 
 from matplotlib import pyplot as plt

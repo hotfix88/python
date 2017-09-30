@@ -11,7 +11,7 @@ __author__ = 'FengYang'
 #测试数据集
  
 #读入数据集   
-def readfile3(filename,sp=','):
+def readfile(filename,sp=','):
   lines=[line for line in open(filename)]
   
   # First line is the dataolumn titles
@@ -26,31 +26,33 @@ def readfile3(filename,sp=','):
   return rownames,dataolnames,data
   
 filename = '西瓜.csv'
-rownames,colnames,data = readfile3(filename,',')
-print('rownames = ',rownames)
-print('colnames = ',colnames)
-print('data = ')
-for i in range(len(data)):
-    print(data[i])
-print()
+rownames,colnames,data = readfile(filename,',')
+
 
 #剔除密度、含糖率两项数据
 import numpy as np
 a = np.array(data)  #tips:多维list直接转换为对应的数组
 a1 = a.T[0:6].T  
 a2 = a.T[-1].T
-b=[]
+data=[]
 for i in range(a1.shape[0]):    
     l1 = list(a1[i])
     l2 = list(a2[i])
     l = l1 + l2  
-    b.append(l)  
-print(len(b))
-b = np.array(b)
-print(b.shape)
+    data.append(l)  
+
+#明细数据打印
+print('rownames = ',rownames)
+print('colnames = ',colnames)
+print('data = ')
+for i in range(len(data)):
+    print(data[i])
+print('data len = ',len(data))
+data = np.array(data)
+print('data shape = ',data.shape)
 
 import tree
-print(tree.calcShannonEnt(b))
+print(tree.calcShannonEnt(data))
 
 #转换数据集
 

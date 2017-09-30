@@ -3,6 +3,7 @@
 
 """
 Created on Sat Dec 03 13:02:03 2016  : Administrator
+
 """
 
 """
@@ -15,7 +16,7 @@ Created on Sat Dec 03 13:02:03 2016  : Administrator
 __author__ = 'FengYang'
 
 from matplotlib import pyplot as plt
-import numpy as np
+#import numpy as np
 
 
 f2 = 'plot_boxer_data_v.csv' #行为月份，列为日期
@@ -35,9 +36,9 @@ for i in range(len(L2)):
 
 
 fig = plt.figure(figsize=(10,4.2))
-plt.boxplot((L3),whis=10)
+plt.boxplot((L3),whis=1)
 plt.xticks([y+1 for y in range(len(L3))], 
-#            ['Sep', 'Oct', 'Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep']
+#  ['Sep', 'Oct', 'Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep']
 ['16-09', '16-10', '16-11','16-12','17-01','17-02',
  '17-03','17-04','17-05','17-06','17-07','17-08','17-09']
             )
@@ -48,9 +49,7 @@ fr.close()
 
 
 
-
-
-#问题：
+#后续问题：
 ##转换为数值型：数组不支持空值转换。
 #s = np.array(L,dtype=np.int32)#转数组
 #print(s2.dtype)
@@ -60,24 +59,26 @@ fr.close()
 
 
 
-#调试区
 
-#print(s2.shape)
-#print(np.median(a0))
-#data1 = ['1','2','3']
-#array1 = np.array(data1)
-#array2 = array1.astype(np.int32)
+'''
+调试区
 
-#a=range(1,10)
-#b=range(2,12)
-#c=range(3,8)
-#plt.boxplot((a,b,c))
-#plt.xlabel('measurement x')
+print(s2.shape)
+print(np.median(a0))
+data1 = ['1','2','3']
+array1 = np.array(data1)
+array2 = array1.astype(np.int32)
 
-#colors = [ 'lightblue', 'lightgreen', 'tan']
-#for patch, color in zip(box['boxes'], colors):
-#    patch.set_facecolor(color)
+a=range(1,10)
+b=range(2,12)
+c=range(3,8)
+plt.boxplot((a,b,c))
+plt.xlabel('measurement x')
 
+colors = [ 'lightblue', 'lightgreen', 'tan']
+for patch, color in zip(box['boxes'], colors):
+    patch.set_facecolor(color)
+'''
 
 '''
 #V1版本

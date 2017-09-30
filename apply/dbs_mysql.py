@@ -3,8 +3,14 @@
 """
  Author:      fyso@163.com fengyangsgs@js.chinamobile.com
  DateTime:    Tue Sep 26 08:53:56 2017
+ Description: 连接使用mysql！
+"""
+"""
+ Author:      fyso@163.com fengyangsgs@js.chinamobile.com
+ DateTime:    Sat Sep 30 15:57:41 2017
  Description: 移植到apply应用目录了
 """
+
 __author__ = 'FengYang'
 
 # 导入MySQL驱动:
@@ -151,4 +157,6 @@ cursor.close()
 conn.close()
 
 '''
+
+
 

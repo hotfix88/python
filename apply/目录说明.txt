@@ -4,4 +4,22 @@
  * Description: Description
  */
 
+这个是应用目录！
+
 2017年9月30日创建，目标很明确，就是为了实现“学以致用”
+
+1、plot_boxer.py
+画箱子图
+
+2、send_email.py
+发送邮件
+
+3、dbs_mysql.py
+mysql数据库的使用
+
+4、dbs_sqlite.py
+sqlite轻量级数据库的使用
+
+5、vector_sum_test.py
+list和numpy vector计算效率比较
+

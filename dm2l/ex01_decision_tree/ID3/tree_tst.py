@@ -43,10 +43,10 @@ print( tree.calcShannonEnt(myDat) )
 print( '---------------最大熵------------------') 
 
 myDat = [[1, 1, 'yes'],
-               [1, 1, 'no'],
-               [1, 0, 'yee'],
-               [0, 1, 'sss'],
-               [0, 1, 'OK']]
+           [1, 1, 'no'],
+           [1, 0, 'yee'],
+           [0, 1, 'sss'],
+           [0, 1, 'OK']]
 print( myDat) 
 print( tree.calcShannonEnt(myDat)  ) 
 

@@ -9,7 +9,7 @@ __author__ = 'FengYang'
 
 import tree
 
-print('---------------------------------')
+print('-----------------------------------')
 
 myDat,labels = tree.createDataSet()
 print (myDat) 
@@ -38,6 +38,7 @@ myDat = [[1, 1, 'no'],
                [1, 1, 'no']]
 print( myDat) 
 print( tree.calcShannonEnt(myDat) )  
+
 
 print( '---------------最大熵------------------') 
 
@@ -92,7 +93,6 @@ print( '-----------------熵值验证----------------')
 myDat,labels = tree.createDataSet()
 print( myDat) 
 print( tree.calcShannonEnt(myDat)   ) 
-
 
 
 

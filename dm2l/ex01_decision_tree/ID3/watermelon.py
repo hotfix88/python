@@ -36,7 +36,7 @@ print()
 
 #剔除密度、含糖率两项数据
 import numpy as np
-a = array(data)  #tips:多维list直接转换为对应的数组
+a = np.array(data)  #tips:多维list直接转换为对应的数组
 a1 = a.T[0:6].T  
 a2 = a.T[-1].T
 b=[]
@@ -46,7 +46,7 @@ for i in range(a1.shape[0]):
     l = l1 + l2  
     b.append(l)  
 print(len(b))
-b = array(b)
+b = np.array(b)
 print(b.shape)
 
 import tree

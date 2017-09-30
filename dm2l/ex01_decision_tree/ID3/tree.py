@@ -6,7 +6,8 @@
  Description: 决策树算法！decision tree
  2015年3月9日学习！至今2年半！这次要：目标明确、坚持到底、学以致用！
 """
-
+import sys
+sys.dont_write_bytecode = True
 #a brave and a firmly heart!
 #ex01_decision_tree,ex means  example/exercise/extremely...
 
@@ -33,8 +34,10 @@ __author__ = 'FengYang'
 
 
 
+
+
 from math import log
-import operator
+#import operator
 
 #测试数据集
 def createDataSet():
@@ -93,7 +96,8 @@ def chooseBestFeatureToSplit(dataSet):
             bestFeature = i
     return bestFeature                      #returns an integer
 
-print( 'end'   ) 
+a = 1
+print( 'end',a   ) 
 
 
 

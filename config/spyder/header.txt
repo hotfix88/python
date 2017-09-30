@@ -15,3 +15,6 @@ Created on %(date)s
  Description: Description
 """
 __author__ = 'FengYang'
+
+import sys
+sys.dont_write_bytecode = True

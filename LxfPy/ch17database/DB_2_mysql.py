@@ -20,10 +20,10 @@ try:
     sql = 'create table user2 (id varchar(20) primary key, name varchar(20))'   
     cursor.execute(sql)
     conn.commit()    
-    print cursor.rowcount  
-    print 'create table user2 success...'
+    print(cursor.rowcount)
+    print('create table user2 success...')
 except  Exception as e:
-    print 'except:', e 
+    print('except:', e )
    
 finally:
     pass
@@ -37,16 +37,16 @@ try:
     cursor.execute('insert into user2 (id, name) values (%s, %s)', ['3', 'Adam'])
     # 提交事务:
     conn.commit()
-    print 'insert table user2 success...'
+    print ('insert table user2 success...')
 except  Exception as e:
-    print 'except:', e    
+    print ('except:', e  )  
 finally:
     pass
 
 # 运行查询:
 cursor.execute('select * from user2 where id >= %s', ('1',))
 values = cursor.fetchall()  #在execute 一些select 后,如果不调用fetcchxxx 之类的语法,就去执行insert 或者update 或者其他语句,有的时候会出错:Unread result found
-print values
+print( values)
 
 #删除记录
 #cursor.execute('delete from user2 where id = %s', ('1',))
@@ -56,7 +56,7 @@ print values
 # 关闭Cursor和Connection:
 cursor.close()
 conn.close()
-print 'the end'
+print ('the end')
 
 
 '''

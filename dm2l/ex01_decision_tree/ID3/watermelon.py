@@ -40,6 +40,12 @@ for i in range(a1.shape[0]):
     l2 = list(a2[i])
     l = l1 + l2  
     data.append(l)  
+    
+#剔除密度、含糖率两项colnames
+c = colnames[0:6]
+c.append(colnames[-1])
+colnames = c
+
 
 #明细数据打印
 print('rownames = ',rownames)
@@ -52,7 +58,14 @@ data = np.array(data)
 print('data shape = ',data.shape)
 
 import tree
-print(tree.calcShannonEnt(data))
+print('结果熵 = ',tree.calcShannonEnt(data))
+
+
+#我误以为这个是最后的熵，其实不是。
+for i in range(1,len(data.T)+1):
+    print(colnames[-i],tree.calcShannonEnt(data.T[-i]))
+
+
 
 #转换数据集
 

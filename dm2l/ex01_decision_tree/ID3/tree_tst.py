@@ -59,7 +59,8 @@ myDat = [[1, 0, 'yes'],
 print( myDat) 
 print( tree.calcShannonEnt(myDat)  ) 
 
-#熵值最后只和第三个值--即分类标示有关！
+#熵值最后只和第三个值--即分类标示有关！?远远不是！
+
 
 print( '----------------tips ：append 和 extend 区别-----------------') 
 a = [1,2,3]

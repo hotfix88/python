@@ -197,6 +197,7 @@ def createTree(dataSet,labels):
 print('函数：生成决策树   createTree(dataSet,labels)')
 
     
+#这个是最终的分类器
 def classify(inputTree,featLabels,testVec):
     firstStr = inputTree.keys()[0]
     secondDict = inputTree[firstStr]

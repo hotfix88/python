@@ -52,3 +52,8 @@ b = c
 b.append(2)
 print(a,b,c)
 print(b == c)
+
+
+#TypeError: 'dict_keys' object does not support indexing
+#在python2.x中，dict.keys()返回一个列表，在python3.x中，dict.keys()返回一个dict_keys对象，比起列表，这个对象的行为更像是set，所以不支持索引的。
+#       解决方案：list(dict.keys())[index]

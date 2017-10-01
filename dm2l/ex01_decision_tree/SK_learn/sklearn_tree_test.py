@@ -12,7 +12,7 @@ from sklearn.datasets import load_iris
 from sklearn import tree
 iris = load_iris()
 clf = tree.DecisionTreeClassifier()
-clf = clf.fit(iris.data, iris.target)
+clf = clf.fit(iris.data, iris.target) #这个算法要求float作为内容元素，需要标称化！
 
 
 #C:\Users\fyso>pip install graphviz
@@ -38,9 +38,6 @@ dot_data = tree.export_graphviz(clf, out_file=None,
                          special_characters=True)  
 graph = graphviz.Source(dot_data)  
 graph
-
-
-
 
 
 print(clf.predict(iris.data[:1, :]))

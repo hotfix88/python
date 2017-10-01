@@ -56,13 +56,15 @@ def createDataSet():
 
 #计算给定数据集的香农熵
 def calcShannonEnt(dataSet):
-    numEntries = len(dataSet)
+    numEntries = len(dataSet)#数据集有几条，数量就是多少
+    #为所有可能的分类创建字典，根据数据集的最后一列
     labelCounts = {}
     for featVec in dataSet: #the the number of unique elements and their occurance
-        currentLabel = featVec[-1]
+        currentLabel = featVec[-1]#最后一列
         if currentLabel not in labelCounts.keys(): 
-            labelCounts[currentLabel] = 0
-        labelCounts[currentLabel] += 1
+            labelCounts[currentLabel] = 0#若之前不存在，则进行初始化赋值
+        labelCounts[currentLabel] += 1#若存在，则加1
+    #开始计算熵
     shannonEnt = 0.0
     for key in labelCounts:
         prob = float(labelCounts[key])/numEntries
@@ -151,7 +153,7 @@ def grabTree(filename):
 
 
 
-d = createDataSet()
+#d = createDataSet()
 
 print('♪(･ω･)ﾉ import tree success! ♪(･ω･)ﾉ   ')
 

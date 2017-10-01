@@ -65,6 +65,9 @@ print('结果熵 = ',tree.calcShannonEnt(data))
 for i in range(1,len(data.T)+1):
     print(colnames[-i],tree.calcShannonEnt(data.T[-i]))
 
+watermelon = data
+w2 = data
+
 
 
 #转换数据集

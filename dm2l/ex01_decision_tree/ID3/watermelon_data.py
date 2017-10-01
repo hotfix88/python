@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- dataoding: utf-8 -*-
 """
- Author:      fyso@163.dataom fengyangsgs@js.datahinamobile.dataom
+ Author:      fyso@163.com fengyangsgs@js.chinamobile.com
  DateTime:    Fri Sep 29 21:11:13 2017
- Desdataription: 西瓜数据集的获取。并转换为tree.calcShannonEnt()所处理的格式！
+ Desdataription: 西瓜数据集的获取。并转换为tree.calcShannonEnt()所能处理的格式！
 """
 __author__ = 'FengYang'
- 
+print(__file__) 
+print(__doc__)
+
 
 #测试数据集
  
@@ -48,29 +50,34 @@ colnames = c
 
 
 #明细数据打印
-print('rownames = ',rownames)
-print('colnames = ',colnames)
-print('data = ')
-for i in range(len(data)):
-    print(data[i])
-print('data len = ',len(data))
-data = np.array(data)
-print('data shape = ',data.shape)
+#print('rownames = ',rownames)
+#print('colnames = ',colnames)
+#print('data = ')
+#for i in range(len(data)):
+#    print(data[i])
+    
+    
+waterMenlon = data
+waterMenlonArray = np.array(data) #转换为数组
+waterMenlonLabels = colnames[:-1]
+waterMenlonLabelsArray = np.array(waterMenlonLabels)
 
-import tree
-print('结果熵 = ',tree.calcShannonEnt(data))
+print('data len = ',len(waterMenlon))
+print('data dim = ',len(waterMenlon[0]))
+print('--------------------------------------')
+print('数据：标签 = waterMenlonLabels')
+print('数据：数据 = waterMenlon')
+print('数据：数组格式标签 = waterMenlonLabelsArray')
+print('数据：数组格式数据 = waterMenlonArray')
 
 
+#import tree
+#print('结果熵 = ',tree.calcShannonEnt(data))
 #我误以为这个是最后的熵，其实不是。
-for i in range(1,len(data.T)+1):
-    print(colnames[-i],tree.calcShannonEnt(data.T[-i]))
+#for i in range(1,len(data.T)+1):
+#    print(colnames[-i],tree.calcShannonEnt(data.T[-i]))
+ 
 
-watermelon = data
-w2 = data
-
-
-
-#转换数据集
 
 
 

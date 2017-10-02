@@ -67,8 +67,8 @@ def createDataSet():
     return dataSet, labels
 isFish,isFishLabels = createDataSet()
 print('--------------------------------------')
-print('测试数据：鱼类数据 = isFish')
-print('测试数据：分类标签 = isFishLabels')
+print('数据：鱼类数据 = isFish')
+print('数据：分类标签 = isFishLabels')
 
 
 '''
@@ -195,35 +195,47 @@ def createTree(dataSet,labels):
         myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value),subLabels)
     return myTree                            
 print('函数：生成决策树   createTree(dataSet,labels)')
+isFishTree = createTree(isFish,isFishLabels)
+print('数据: 鱼类判断器 = isFishTree')
+
+
 
     
 #这个是最终的分类器
 def classify(inputTree,featLabels,testVec):
-    firstStr = inputTree.keys()[0]
+    firstStr = list(inputTree.keys())[0]
     secondDict = inputTree[firstStr]
     featIndex = featLabels.index(firstStr)
     key = testVec[featIndex]
     valueOfFeat = secondDict[key]
     if isinstance(valueOfFeat, dict): 
-        classLabel = classify(valueOfFeat, featLabels, testVec)
+        classLabel = classify(valueOfFeat, featLabels, testVec)#也是一个递归
     else: classLabel = valueOfFeat
     return classLabel
+#classify(isFishTree,isFishLabels,[1,0])
+#分类成功： classify(waterMenlonTree,waterMenlonLabels,['青绿', '蜷缩', '浊响', '清晰', '凹陷', '硬滑'])
+#分类失败： classify(waterMenlonTree,waterMenlonLabels,['青绿', '稍卷', '浊响', '稍糊', '平坦', '硬滑'])
+print('函数：决策树分类器 classify(inputTree,featLabels,testVec)')
 
 def storeTree(inputTree,filename):
     import pickle
-    fw = open(filename,'w')
+    fw = open(filename,'wb') #记住，这里要用wb
     pickle.dump(inputTree,fw)
     fw.close()
+#storeTree(isFishTree,'classify_fish.txt')   
+#storeTree(waterMenlonTree,'classify_waterMenlon.txt')   
     
 def grabTree(filename):
     import pickle
-    fr = open(filename)
-    return pickle.load(fr)
-
-
+    fr = open(filename,'rb')
+    dr = pickle.load(fr)
+    fr.close()
+    return dr
+#grabTree('classify_fish.txt')
+#grabTree('classify_waterMenlon.txt')
 
 #d = createDataSet()
-
+#createTree(isFish,isFishLabels)
 
 
 

@@ -10,8 +10,9 @@ print(__file__)
 print(__doc__)
 
 
-#测试数据集
- 
+#读入数据集方法2
+waterMenlon2 = [line.split(',') for line in open('西瓜.csv')]
+
 #读入数据集   
 def readfile(filename,sp=','):
   lines=[line for line in open(filename)]

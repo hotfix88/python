@@ -70,8 +70,8 @@ print('数据：标签 = waterMenlonLabels')
 print('数据：数据 = waterMenlon')
 print('数据：数组格式标签 = waterMenlonLabelsArray')
 print('数据：数组格式数据 = waterMenlonArray')
-waterMenlonTree = createTree(waterMenlon,waterMenlonLabels)
-print('数据：西瓜分类树 = waterMenlonTree')
+print('数据：西瓜分类树 = waterMenlonTree, 需调用createTree')
+#waterMenlonTree = createTree(waterMenlon,waterMenlonLabels)
 
 #import tree
 #print('结果熵 = ',tree.calcShannonEnt(data))

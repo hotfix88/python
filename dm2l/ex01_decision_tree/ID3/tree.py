@@ -11,7 +11,7 @@ sys.dont_write_bytecode = True
 print(__file__)
 print(__doc__)
 
-_P_ = 0
+_P_ = 1
 def printyes():
     global  _P_ 
     _P_ = 1
@@ -26,8 +26,8 @@ __author__ = 'FengYang'
 
 '''
 最常用的数据挖掘算法。因为原理简单，一看就明白！（优势就是数学形式简单易懂）
-机器根据数据集创建规则，就是机器学习的过程，专家系统中经常使用决策树。给出的结果可以媲美资深专家！
-
+机器根据数据集创建规则，就是机器学习的过程，专家系统中经常使用决策树。
+给出的结果可以媲美资深专家！
 
 优点：计算复杂度不高，结果易于理解，中间值缺失不敏感，可以处理不相关特征数据。
 缺点：可能产生过度匹配问题。
@@ -35,11 +35,11 @@ __author__ = 'FengYang'
 
 有二分法的决策树，也有根据可能值的划分，这一节使用ID3算法。
 
-
 第一个问题，如何划分数据集？
-最大的原则就是：将无序的数据变得更加有序！而获得信息增益information gain最高的特征就是最好的选择，
+最大的原则就是：将无序的数据变得更加有序！
+而获得信息增益information gain最高的特征就是最好的选择，
 熵 entropy
-所有的决策树都采用自顶向下的贪心算法！在每个节点使用分类效果最好的方法进行分类。
+所有的决策树都采用自顶向下的贪心算法！在每个节点使用“分类效果最好”的方法进行分类。
 节点属性选择方法：信息增益、信息增益率、基尼Gini指数、卡方检验等。
 
 先剪枝和后剪枝：
@@ -47,7 +47,7 @@ __author__ = 'FengYang'
 
 
 #如何选择节点的最优划分属性？ 随着划分的不断进行，节点的纯度越来越高,最后成了叶子
-#每个点划分的标准也是让纯度越高越好（即增益越高越好）。
+#每个点划分的标准也是让节点纯度越高越好（使总体混乱程度降低，即增益越高越好）。
 
 
 
@@ -110,7 +110,8 @@ def splitDataSet(dataSet, axis, value):
             reducedFeatVec = featVec[:axis]     #chop out axis used for splitting
             reducedFeatVec.extend(featVec[axis+1:])#此处也是个关键，
             retDataSet.append(reducedFeatVec)
-#    if _P_ == 1 : print('子数据行 = ',len(retDataSet),'子数据列 = ',len(retDataSet[0]))#测试信息
+    if _P_ == 1 : print('子数据行 = ',len(retDataSet),'子数据列 = ',len(retDataSet[0]))#测试信息
+    if _P_ == 1 : print(retDataSet)
     return retDataSet
 
 
@@ -194,10 +195,9 @@ def createTree(dataSet,labels):
         #注意了，splitDataSet返回了子列表！splitDataSet(dataSet, bestFeat, value)
         myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value),subLabels)
     return myTree                            
-print('函数：生成决策树   createTree(dataSet,labels)')
 isFishTree = createTree(isFish,isFishLabels)
+print('函数：生成决策树   createTree(isFish,isFishLabels)')
 print('数据: 鱼类判断器 = isFishTree')
-
 
 
     

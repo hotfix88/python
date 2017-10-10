@@ -80,8 +80,8 @@ for i in range(num):
 	# 收件内容
 
 	NAME = '郑总，您好:\n\n'
-	NOTICE = '    您的电渠数据分析平台账号已经分配，可以查看平台内所有报表。\
-    因安全管理检查需要，已将您的账号密码设置为强密码，请留存，谢谢！\n 数据分析平台新地址：http://10.32.111.51:8080/analyse/bin/analyse.html\n'
+	NOTICE = '    您的电渠数据分析平台账号已经分配，权限为-所有报表。\
+    根据安全管理要求，已将您的账号密码设置为强密码，请留存，谢谢！\n 数据分析平台新地址：http://10.32.111.51:8080/analyse/bin/analyse.html\n'
 	ID   = '账号:'
 	idr  =  id[i]#'fengyangsgs'
 	PWD  = '密码:'
@@ -91,7 +91,7 @@ for i in range(num):
 	msg = MIMEText(NAME+NOTICE+ID+idr+'\n'+PWD+pwdr+'\n'+DATE, 'plain', 'utf-8')
 
 	#标题
-	msg['Subject'] = Header(u'您好，您的电渠数据分析平台密码已经更新，请留存！', 'utf-8').encode()
+	msg['Subject'] = Header(u'您好，您的电渠数据分析平台账号已分配，请留存！', 'utf-8').encode()
 
 	server = smtplib.SMTP(smtp_server, 25) # SMTP协议默认端口是25
 	server.set_debuglevel(1)

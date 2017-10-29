@@ -32,3 +32,4 @@ def datestr2num(s):
 #变成string格式。
 dates,close  = np.loadtxt('data.csv',delimiter=',',usecols=(1,6),unpack=True,
                           converters={1:datestr2num})
+

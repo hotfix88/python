@@ -3,7 +3,7 @@
 """
  Author:      fyso@163.com fengyangsgs@js.chinamobile.com
  DateTime:    Sat Oct 28 21:54:30 2017
- Description: Description
+ Description: 数组的基本情况
 """
 __author__ = 'FengYang'
 
@@ -47,6 +47,11 @@ w = np.array([0,1,2,3,4,5,6],dtype='int64')
 print(w,w.dtype,type(w),w.shape)
 
 print(u.dtype.itemsize,v.dtype.itemsize)
+
+print('\n------------改变数组维度reshape-------------')
+x = np.arange(24).reshape(2,3,4)
+print(x,x.dtype,type(x),x.shape)
+
 
 
 

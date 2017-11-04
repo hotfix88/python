@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
  Author:      fyso@163.com fengyangsgs@js.chinamobile.com
- DateTime:    2017-09-05 15:51:30
+ DateTime:    2017-09-05 15:51:30  #尚未选型3.6.2
  Description: Description
 """
 __author__ = 'FengYang'
@@ -46,13 +46,15 @@ def loadDataSet(fileName,sp=','):      #general function to parse tab -delimited
 # yuanpeng	SSX33#ks	袁鹏	yuanpengsgs@js.chinamobile.com
 
 
-data,id,pwd,name,addr,num = loadDataSet('test2.csv',',')  #all.csv
+data,id,pwd,name,addr,num = loadDataSet('all20171102.csv',',')  #all.csv
 
 #发件人和服务器
-from_addr = 'fengyangsgs@js.chinamobile.com'
-password = 'Fy955786'
-smtp_server = '221.176.66.74' #ping mail.chinamobile.com   外网地址！
- #'172.16.121.102'  内网地址！
+#from_addr = 'fengyangsgs@js.chinamobile.com'
+#password = 'Fy955786'
+from_addr = 'dzqd@js.chinamobile.com'
+password = 'Dzqd0728'
+#smtp_server = '221.176.66.74' #ping mail.chinamobile.com   外网地址！
+smtp_server = '172.16.121.102'  #内网地址！
 
 #用来给自己发是可以的。但是fyso无法发给 公司邮箱。
 #from_addr = 'fyso@163.com'
@@ -71,10 +73,40 @@ count = 0
 for i in range(num):
 
 	# 输入收件人地址:
-	to_addr = addr[i] #'fengyangsgs@js.chinamobile.com'
+    to_addr = addr[i] #'fengyangsgs@js.chinamobile.com'
 
 	# 收件内容
 
+    NAME = name[i]+'，您好:\n'
+    NOTICE = '        您的电渠数据分析平台账号('+id[i]+')可以修改密码了，'
+    NOTICE1 = '新密码必须同时包含字母、符号、数字，且长度不小于8位。\n\
+    数据分析平台地址：http://10.32.111.51:8080/analyse/bin/analyse.html\n'
+    NOTICE2 = '维护信息安全，请勿账号共享！如有使用问题请联系冯杨、许毓玮处理。\n'
+    
+    DATE = "\n------------------------------\n电渠数据分析组 %s \n\
+"  %datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +"\n"
+
+    msg = MIMEText(NAME+NOTICE+NOTICE1+NOTICE2+DATE, 'plain', 'utf-8')
+
+	#标题
+    msg['Subject'] = Header(u'您好，已开放电渠数据分析平台密码修改，请知悉！', 'utf-8').encode()
+
+    import smtplib
+    server = smtplib.SMTP(smtp_server, 25) # SMTP协议默认端口是25
+    server.set_debuglevel(1)
+    server.login(from_addr, password)
+    server.sendmail(from_addr, [to_addr], msg.as_string())
+    server.quit()
+
+    time.sleep(0.2)
+    count+=1
+
+print('-------------------')
+print('%s Emails send!'%count)
+
+
+
+'''
 	NAME = '您好:\n\n'
 	NOTICE = '    因安全管理检查需要，暂将您的账号密码修改为强密码，并临时关闭密码修改功能，开放时间另行通知。\n 数据分析平台新地址：http://10.32.111.51:8080/analyse/bin/analyse.html\n'
 	ID   = '账号:'
@@ -88,15 +120,4 @@ for i in range(num):
 	#标题
 	msg['Subject'] = Header(u'您好，您的电渠数据分析平台密码已经更新，请留存！', 'utf-8').encode()
 
-	import smtplib
-	server = smtplib.SMTP(smtp_server, 25) # SMTP协议默认端口是25
-	server.set_debuglevel(1)
-	server.login(from_addr, password)
-	server.sendmail(from_addr, [to_addr], msg.as_string())
-	server.quit()
-
-	time.sleep(0.2)
-	count+=1
-
-print '-------------------'
-print '%s Emails send!'%count
+'''

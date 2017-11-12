@@ -1,9 +1,6 @@
-Default (Windows).sublime-keymap
-
-
 [
 
     { "keys": ["ctrl+shift+c"], "command": "add_infoc" },
     { "keys": ["ctrl+shift+o"], "command": "add_info" },
-    { "keys": ["ctrl+shift+0"], "command": "add_infow" },
+    { "keys": ["ctrl+alt+w"], "command": "add_infow" },
 ]

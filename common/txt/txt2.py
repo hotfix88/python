@@ -11,17 +11,17 @@ import sys
 #大小写转化，乱码么？
 
 def help():
-    print 'This is txt2'
-    print '文件名称;选项;'
-    print '0:全转换成大写(默认)'
-    print '1:全转换成小写'
-    print '2:首字母大写，其余全部小写'
-    print '3:标题首字大写'
-    print '4:字符拼接处理'
+    print('This is txt2')
+    print('文件名称;选项;')
+    print('0:全转换成大写(默认)')
+    print('1:全转换成小写')
+    print('2:首字母大写，其余全部小写')
+    print('3:标题首字大写')
+    print('4:字符拼接处理')
 
 
 def readfile(filename,sp=0):
-    lines=[line for line in file(filename)]
+    lines=[line for line in open(filename)]
     lines2=[]
     linenum = 0
     for line in lines:#注意，这里所有的line都是带回车键的
@@ -62,15 +62,15 @@ elif len(sys.argv) == 3:
 doc,num = readfile(infilename,sp)
 outfilename = 'out_'+infilename
 
-f = file(outfilename,'w+')
+f = open(outfilename,'w+') #file 2.7.6 to open 3.6.2 
 for line in doc:
     f.write(line)
-print 'Origin file : ' , infilename
-print 'Create file : ' , outfilename
-print 'Total lines : ',num
+print('Origin file : ' , infilename)
+print('Create file : ' , outfilename)
+print('Total lines : ',num)
 
 if num > 0:
-    print 'The laseline: ' ,doc[-1]
+    print('The laseline: ' ,doc[-1])
 
 
 f.close()

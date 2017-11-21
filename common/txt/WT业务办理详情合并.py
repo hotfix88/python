@@ -7,7 +7,32 @@
 """
 __author__ = 'FengYang'
 
+from itertools import islice 
 
+#文件列表，遍于读取
+filelist = []
+filelist.append('ZXXH_new1111.txt')
+filelist.append('ZXXH_new1112.txt')
+filelist.append('ZXXH_new1113.txt')
+filelist.append('ZXXH_new1114.txt')
+filelist.append('ZXXH_new1115.txt')
+
+
+#要写入的文件
+filename = open('ZXXH_out.txt', 'w')
+
+#遍历读取所有文件，并写入到输出文件
+#使用  from itertools import islice   快速跳过第一行！
+for fr in filelist:   
+    input_file = open(fr, 'r')
+    for txt in islice(input_file, 1, None):  
+        filename.write(txt)
+    input_file.close()
+        
+filename.close()
+
+
+'''  先处理再合并
 #文件列表，遍于读取
 filelist = []
 filelist.append('1111_out.xls')
@@ -26,6 +51,8 @@ for fr in filelist:
         filename.write(txt)
         
 filename.close()
+'''
+
 
 
 

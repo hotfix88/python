@@ -8,18 +8,29 @@
 __author__ = 'FengYang'
 
 from itertools import islice 
+from datetime import datetime
 
+
+start = datetime.now()
+print('file combo begin...')
 #文件列表，遍于读取
 filelist = []
-filelist.append('ZXXH_new1111.txt')
-filelist.append('ZXXH_new1112.txt')
-filelist.append('ZXXH_new1113.txt')
-filelist.append('ZXXH_new1114.txt')
-filelist.append('ZXXH_new1115.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1111.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1112.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1113.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1114.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1115.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1116.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1117.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1118.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1119.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1120.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1121.txt')
+filelist.append('D:/data/xmhk/ZXXH_new1122.txt')
 
 
 #要写入的文件
-filename = open('ZXXH_out.txt', 'w')
+filename = open('D:/data/xmhk/ZXXH_out.txt', 'w')
 
 #遍历读取所有文件，并写入到输出文件
 #使用  from itertools import islice   快速跳过第一行！
@@ -30,6 +41,11 @@ for fr in filelist:
     input_file.close()
         
 filename.close()
+
+
+delta = datetime.now() - start
+print('total time: ', delta)
+
 
 
 '''  先处理再合并

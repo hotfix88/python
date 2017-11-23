@@ -11,8 +11,9 @@ import pytz
 
 
 start = datetime.now()
+print('starting data flush...')
 
-filename = 'ZXXH_out.txt' #手工修改 
+filename = 'D:/data/xmhk/ZXXH_out.txt' #手工修改 
 
 lines = [line for line in open(filename,'r')]
 
@@ -64,7 +65,7 @@ for i in range(0,len(lines)):
     
     
 #    输出文件名称
-outfilename = 'out.xls'  
+outfilename = 'D:/data/xmhk/out.xls'  
 
 f = open(outfilename,'w') #file 2.7.6 to open 3.6.2 
 for line in lines:

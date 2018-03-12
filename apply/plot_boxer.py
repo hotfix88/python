@@ -36,7 +36,7 @@ for i in range(len(L2)):
 
 
 fig = plt.figure(figsize=(10,4.2))
-plt.boxplot((L3),whis=1)
+plt.boxplot((L3),whis=10) #whis 表示异常值判断范围
 plt.xticks([y+1 for y in range(len(L3))], 
 #  ['Sep', 'Oct', 'Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep']
 ['16-09', '16-10', '16-11','16-12','17-01','17-02',

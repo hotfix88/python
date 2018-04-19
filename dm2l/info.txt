@@ -11,3 +11,21 @@
 。。。
 
 
+
+print(__file__)
+print(__doc__)
+
+
+_P_ = 1
+def printyes():
+    global  _P_ 
+    _P_ = 1
+def printno():
+    global  _P_ 
+    _P_ = 0
+    
+    
+#a brave and a firmly heart!
+#ex01_decision_tree,ex means  example/exercise/extremely...
+
+

@@ -6,23 +6,12 @@
  Description: 决策树算法！decision tree
  2015年3月9日学习！至今2年半！这次要：目标明确、坚持到底、学以致用！
 """
+#不生成pyc
 import sys
 sys.dont_write_bytecode = True
-print(__file__)
-print(__doc__)
-
-_P_ = 1
-def printyes():
-    global  _P_ 
-    _P_ = 1
-def printno():
-    global  _P_ 
-    _P_ = 0
-
-#a brave and a firmly heart!
-#ex01_decision_tree,ex means  example/exercise/extremely...
-
 __author__ = 'FengYang'
+
+
 
 '''
 最常用的数据挖掘算法。因为原理简单，一看就明白！（优势就是数学形式简单易懂）
@@ -30,7 +19,7 @@ __author__ = 'FengYang'
 给出的结果可以媲美资深专家！
 
 优点：计算复杂度不高，结果易于理解，中间值缺失不敏感，可以处理不相关特征数据。
-缺点：可能产生过度匹配问题。
+缺点：可能产生过度匹配问题。所以需要剪枝。
 适用数据类型：数值型和标称型，数据必须离散化。
 
 有二分法的决策树，也有根据可能值的划分，这一节使用ID3算法。
@@ -227,7 +216,7 @@ def storeTree(inputTree,filename):
     
 def grabTree(filename):
     import pickle
-    fr = open(filename,'rb')
+    fr = open(filename,'rb') 
     dr = pickle.load(fr)
     fr.close()
     return dr

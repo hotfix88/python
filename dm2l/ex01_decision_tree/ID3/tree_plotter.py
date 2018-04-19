@@ -7,6 +7,10 @@
 """
 __author__ = 'FengYang'
 
+import sys
+sys.dont_write_bytecode = True
+ 
+
 import matplotlib.pyplot as plt
 #import matplotlib
 #matplotlib.use('qt4agg') 

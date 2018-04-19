@@ -89,7 +89,8 @@ def classify(inputTree,featLabels,testVec):
     valueOfFeat = secondDict[key]
     if isinstance(valueOfFeat, dict):
         classLabel = classify(valueOfFeat, featLabels, testVec)
-    else: classLabel = valueOfFeat
+    else:
+        classLabel = valueOfFeat
     return classLabel
 
 def storeTree(inputTree,filename):
@@ -104,6 +105,5 @@ def grabTree(filename):
     return pickle.load(fr)
 
 
-
 def  test():
-    return 1
+    return '1'

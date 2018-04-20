@@ -1,0 +1,31 @@
+﻿/**
+ * Author:      fyso@163.com   fengyangsgs@js.chinamobile.com
+ * DateTime:    2017-09-26 23:51:57
+ * Description: Description
+ */
+
+数据挖掘专项目录！！
+
+注意，这也是一个应用级的目录！
+
+。。。
+
+
+
+print(__file__)
+print(__doc__)
+
+
+_P_ = 1
+def printyes():
+    global  _P_ 
+    _P_ = 1
+def printno():
+    global  _P_ 
+    _P_ = 0
+    
+    
+#a brave and a firmly heart!
+#ex01_decision_tree,ex means  example/exercise/extremely...
+
+

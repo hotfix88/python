@@ -12,16 +12,21 @@ __author__ = 'Fyso'
 
 # 导入类库
 from pandas import read_csv
-from matplotlib.image import imread
-from matplotlib import pyplot as plt
+
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+
+from matplotlib.image import imread
+from matplotlib import pyplot as plt
 from sklearn.tree import export_graphviz
+import pydotplus
+import os
+
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
-import pydotplus
-import os
+
+
 
 # 导入数据
 filename = 'iris.data.csv'

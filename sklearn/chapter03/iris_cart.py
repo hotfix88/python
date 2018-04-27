@@ -7,6 +7,7 @@
  
  pip install pydotplus
  
+ 
 """
 __author__ = 'Fyso'
 
@@ -16,9 +17,9 @@ from pandas import read_csv
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
+from sklearn.tree import export_graphviz
 from matplotlib.image import imread
 from matplotlib import pyplot as plt
-from sklearn.tree import export_graphviz
 import pydotplus
 import os
 
@@ -44,11 +45,15 @@ X_train, X_validation, Y_train, Y_validation = \
 
 
 #决策树模型训练
-cart = DecisionTreeClassifier()
+cart = DecisionTreeClassifier(criterion='entropy')
 cart.fit(X=X_train, y=Y_train)
 
 #决策树图形化
-dot_data = export_graphviz(cart,out_file=None)
+dot_data = export_graphviz(cart,out_file=None,
+                     feature_names=names[0:4],  
+                     class_names=names[4],  
+                     filled=True, rounded=True,  
+                     special_characters=True)
 graph = pydotplus.graph_from_dot_data(dot_data)
 path = os.getcwd() + '\\'
 tree_file = path + 'iris.png'
@@ -62,7 +67,7 @@ finally:
 
 #显示图像
 image_data = imread(tree_file)
-plt.figure(num='cart',figsize=(16,16)) 
+plt.figure(num='cart',figsize=(10,10)) 
 plt.imshow(image_data)
 plt.axis('off')
 plt.show()
@@ -72,6 +77,8 @@ predictions = cart.predict(X_validation)
 print(accuracy_score(Y_validation, predictions))
 print(confusion_matrix(Y_validation, predictions))
 print(classification_report(Y_validation, predictions)) #
+
+
 
 
 

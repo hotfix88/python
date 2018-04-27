@@ -25,6 +25,7 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier  
 
 # 导入数据
 filename = 'iris.data.csv'
@@ -72,6 +73,8 @@ models['KNN'] = KNeighborsClassifier()
 models['CART'] = DecisionTreeClassifier()
 models['NB'] = GaussianNB()
 models['SVM'] = SVC()
+models['RF'] = RandomForestClassifier(n_estimators=10)  #弱学习迭代次数
+
 # 评估算法
 results = []
 for key in models:

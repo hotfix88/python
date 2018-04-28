@@ -20,3 +20,17 @@ plt.xlabel('x axis')
 plt.ylabel('y axis')
 # 绘图
 plt.show()
+
+
+
+
+
+
+plt.plot([1,2,3], [1,2,3], 'go-', label='line 1', linewidth=2)
+plt.plot([1,2,3], [1,4,9], 'rs',  label='line 2')
+plt.axis([0, 4, 0, 10])
+plt.show()
+
+
+plt.plot([1,2])
+plt.show()

@@ -35,7 +35,8 @@ print(type(data),data.shape)
 #推荐使用这个！
 
 
-
+#X = array[0:3, 0:8] #前3行，前8列
+#Y = array[0:3, 8]  #前3行，第9列
 
 
 data1 = data[0:10]

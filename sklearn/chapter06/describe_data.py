@@ -18,10 +18,12 @@ peek = data.head(10)
 print(peek)
 print(type(peek),peek.shape)
 print(type(data),data.shape)
+# array , dataframe 都支持
 
 #
 print('--------------dtypes------------')
 print(data.dtypes)
+# array 不支持, dataframe 支持
 
 #
 print('------------describe--------------')
@@ -30,10 +32,9 @@ set_option('display.width', 80)
 # 设置数据的精确度
 set_option('precision', 2)
 print(data.describe())
+# array 不支持, dataframe 支持
 
-#
-print('--------------dtypes------------')
-print(data.dtypes)
+ 
 
 #
 print('--------------groupby------------')

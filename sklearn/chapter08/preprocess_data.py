@@ -9,12 +9,14 @@ __author__ = 'Fyso'
 
 from pandas import read_csv
 from numpy import set_printoptions  #设置精度
+from pandas import set_option #设置精度，
 import numpy as np
 # 导入数据
 filename = 'pima_data.csv'
 names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
 data = read_csv(filename, names=names)
 # 将数据分为输入数据和输出结果
+set_option('precision', 2)
 array = data.values
 X = array[0:10, 0:8] #前10行，前8列
 Y = array[0:10, 8]  #前10行，第9列

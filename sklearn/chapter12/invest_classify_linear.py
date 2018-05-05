@@ -34,7 +34,7 @@ print(result.mean())
 
 
 print('\n------------------LDA linear Discriminant Analysis------------------')
-
+#最大类间距离，最小类内距离，也用于数据降维
 from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis

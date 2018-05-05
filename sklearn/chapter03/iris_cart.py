@@ -30,7 +30,7 @@ from sklearn.metrics import classification_report
 
 
 # 导入数据
-filename = 'iris.data.csv'
+filename = 'D:\Git\python\sklearn\data\iris.data.csv'
 names = ['separ-length', 'separ-width', 'petal-length', 'petal-width', 'class']
 dataset = read_csv(filename, names=names)
 

@@ -1,7 +1,0 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-Created on %(date)s
-Mail : fyso@163.com
-@author: %(username)s   CMCC.JS.FengYang
-"""

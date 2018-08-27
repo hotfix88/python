@@ -1,7 +1,0 @@
-/**
- * Author:      fyso@163.com fengyangsgs@js.chinamobile.com
- * DateTime:    2017-10-01 11:44:37
- * Description: Description
- */
-说明：
-这个是最早创建的python应用目录，分为文本、爬虫、自动化、数据挖掘等，后续可以被取代了。

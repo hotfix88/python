@@ -1,8 +1,0 @@
-{"a":"1\/Windows\/5.0","b":"eye","tz":"taiwan"}
-{"a":"2\/Linux\/3.0","b":"apple","tz":"beijing"}
-{"a":"3\/Mac","b":"heart"}
-{"a":"1\/Windows\/5.0","b":"leg","tz":"taiwan"}
-{"a":"1\/Windows\/4.0","b":"mouth","tz":"beijing"}
-{"a":"1\/Windows\/3.0","b":"hand","tz":"beijing"}
-{"a":"2\/Linux\/3.0","b":"liver","tz":""}
-{"b":"baby","tz":"Nanjing"}

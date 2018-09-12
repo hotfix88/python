@@ -7,9 +7,8 @@
 """
 __author__ = 'FYSO'
 
-
-import urllib2
-c=urllib2.urlopen('https://www.wikipedia.org/') #http://www.baidu.com
+import urllib
+c=urllib.request.urlopen('http://w ap.js.10086.cn/YHHD.thtml') 
 contents = c.read()
 print(contents[0:200])
 '''
@@ -19,10 +18,13 @@ print(contents[0:200])
  created and edited by
 '''
 
+#断言
 page = 'http://segaran.com/wiki'
-page = 'https://www.wikipedia.org'
+page = 'https://www.wikipedia.o rg'
 try:
-    c = urllib2.urlopen(page)
+    #c = urllib2.urlopen(page)
+    c = urllib.request.urlopen(page) 
 except:
     print('could not open %s'%page)
     
+

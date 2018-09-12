@@ -42,7 +42,7 @@ class crawler:
 
     #获取条目id，如果不存在，则新建
     def getentryid(self,table,field,value,createnew=True):
-        return None
+        return 1
 
     #为每个网页建立索引
     def addtoindex(self,url,soup):
@@ -66,7 +66,7 @@ class crawler:
                 continue
             wordid = self.getentryid('wordlist','word',word)
             self.con.execute('insert to wordlocation(urlid,wordid,location)\
-                values(%d,%d,%d)'%(urlid,wordid,i))
+                             values(%d,%d,%d)'%(urlid,wordid,i))
         
 
     #从HTML提取文字,
